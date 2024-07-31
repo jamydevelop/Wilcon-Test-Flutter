@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/presentation/screens/checklistpage/checklist_page.dart';
-import 'package:wilcon_mobile/presentation/screens/ticketlistpage/ticketlist_page.dart';
-// import 'package:wilcon_mobile/presentation/widgets/button_class.dart';
-import 'package:wilcon_mobile/presentation/widgets/custom_appbar.dart';
+import 'package:wilcon_mobile/presentation/screens/meterreadingspage/meterreadings_page.dart';
+import 'package:wilcon_mobile/presentation/screens/scanqrcodepage/scanqrcode_page.dart';
+import 'package:wilcon_mobile/presentation/screens/smartbuildingsolution/smartbuildingsolution_page.dart';
+import 'package:wilcon_mobile/presentation/screens/workorderspage/workorders_page.dart';
+import 'package:wilcon_mobile/presentation/widgets/button_class.dart';
 import 'package:wilcon_mobile/presentation/widgets/custom_drawer.dart';
+import 'package:wilcon_mobile/presentation/widgets/appbar_01.dart';
+import '../ticketlistpage/ticketlist_page.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -13,24 +17,32 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  ButtonClass buttonClass = ButtonClass();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      //backgroundColor: Colors.teal,
-      appBar: const CustomAppBar(),
-      endDrawer: const CustomDrawer(), // Use the custom AppBar
-      body: SafeArea(
-        child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 12.0),
+    return SafeArea(
+      child: Scaffold(
+        endDrawer: const CustomDrawer(),
+        //appBar: ,
+        body: SafeArea(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
             children: [
-              const SizedBox(height: 24),
-              _headerUser(),
-              const SizedBox(height: 24),
-              _homePageBody(),
-              const SizedBox(height: 24),
-              //_buttonContainer(),
+              const AppBar01Class(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    // buttonClass.buttonOne(context),
+                    const SizedBox(height: 24),
+                    _headerUser(),
+                    const SizedBox(height: 24),
+                    _homePageBody(),
+                    const SizedBox(height: 24),
+                  ],
+                ),
+              )
             ],
           ),
         ),
@@ -40,7 +52,7 @@ class _HomepageState extends State<Homepage> {
 
   Widget _headerUser() {
     return Container(
-      //color: Colors.blue,
+      // color: Colors.blue,
       padding: const EdgeInsets.symmetric(vertical: 12.0),
       child: Row(
         children: [
@@ -79,7 +91,13 @@ class _HomepageState extends State<Homepage> {
                   child: SizedBox(
                     height: 104,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const WorkOrdersPage()),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: const Color.fromRGBO(22, 110, 22, 1),
@@ -167,7 +185,14 @@ class _HomepageState extends State<Homepage> {
                   child: SizedBox(
                     height: 104,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const SmartBuildingSolutionPage()),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: const Color.fromRGBO(22, 110, 22, 1),
@@ -236,10 +261,6 @@ class _HomepageState extends State<Homepage> {
                                 fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           SizedBox(height: 4),
-                          Text(
-                            'Tap to like',
-                            style: TextStyle(fontSize: 14, color: Colors.grey),
-                          ),
                         ],
                       ),
                     ),
@@ -254,7 +275,13 @@ class _HomepageState extends State<Homepage> {
                   child: SizedBox(
                     height: 104,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const WorkOrdersPage()),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: const Color.fromRGBO(22, 110, 22, 1),
@@ -293,7 +320,13 @@ class _HomepageState extends State<Homepage> {
                   child: SizedBox(
                     height: 104,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MeterReadingsPage()),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: const Color.fromRGBO(22, 110, 22, 1),
@@ -328,26 +361,48 @@ class _HomepageState extends State<Homepage> {
                 ),
               ],
             ),
-            // const SizedBox(height: 10),
-            // SizedBox(
-            //   width: double.infinity,
-            //   height: 100,
-            //   child: SizedBox(
-            //     child: ElevatedButton(
-            //       onPressed: () {},
-            //       style: ElevatedButton.styleFrom(
-            //         foregroundColor: Colors.white,
-            //         backgroundColor: const Color.fromRGBO(22, 110, 22, 1),
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(
-            //               8), // Removes the rounded corners
-            //         ), // Text color
-            //       ),
-            //       child: const Text('Long Button'),
-            //     ),
-            //   ),
-            // ),
-            // const SizedBox(height: 24),
+            const SizedBox(height: 10),
+            SizedBox(
+              width: double.infinity,
+              height: 100,
+              child: SizedBox(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ScanQRCodePage()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    backgroundColor: const Color.fromRGBO(22, 110, 22, 1),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                          8), // Removes the rounded corners
+                    ), // Text color
+                  ),
+                  child: const Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.qr_code_2,
+                        size: 25,
+                        color: Colors.white,
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        'Scan QR Code',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 4),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 24),
           ],
         ),
       ),
@@ -381,5 +436,4 @@ class _HomepageState extends State<Homepage> {
   //     ),
   //   );
   // }
-
-  }
+}

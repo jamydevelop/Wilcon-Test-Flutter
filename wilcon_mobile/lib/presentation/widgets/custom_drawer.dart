@@ -1,4 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/presentation/screens/checklistpage/checklist_page.dart';
+import 'package:wilcon_mobile/presentation/screens/homepage/home_page.dart';
+import 'package:wilcon_mobile/presentation/screens/meterreadingspage/meterreadings_page.dart';
+import 'package:wilcon_mobile/presentation/screens/notificationspage/notifications_page.dart';
+import 'package:wilcon_mobile/presentation/screens/workorderspage/workorders_page.dart'; // Import your pages
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -14,7 +21,6 @@ class CustomDrawer extends StatelessWidget {
               child: ListView(
                 padding: EdgeInsets.zero,
                 children: <Widget>[
-                  
                   const Padding(
                     padding: EdgeInsets.only(top: 48.0), // Margin for the top
                     child: ListTile(
@@ -41,25 +47,43 @@ class CustomDrawer extends StatelessWidget {
                     Icons.home,
                     'Homepage',
                     'Homepage tapped',
+                    () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Homepage()),
+                    ),
                   ),
                   _buildListTile(
                     context,
                     Icons.check_box_rounded,
                     'Checklist',
                     'Checklist tapped',
+                    () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ChecklistPage()),
+                    ),
                   ),
                   _buildListTile(
                     context,
                     Icons.work,
                     'Work Orders',
                     'Work Orders tapped',
+                    () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WorkOrdersPage()),
+                    ),
                   ),
                   _buildListTile(
                     context,
                     Icons.restart_alt_rounded,
                     'Meter Readings',
                     'Meter Readings tapped',
-                    
+                    () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MeterReadingsPage()),
+                    ),
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 12.0),
@@ -70,6 +94,11 @@ class CustomDrawer extends StatelessWidget {
                     Icons.notifications,
                     'Notifications',
                     'Notifications tapped',
+                    () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NotificationsPage()),
+                    ),
                   ),
                 ],
               ),
@@ -94,8 +123,8 @@ class CustomDrawer extends StatelessWidget {
                           vertical: 16.0), // Button height
                     ),
                     onPressed: () {
+                      exit(0);
                       // Define the action for the button here
-                      debugPrint('Button pressed');
                     },
                     child: const Text('Logout'),
                   ),
@@ -108,8 +137,8 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildListTile(
-      BuildContext context, IconData icon, String title, String debugMessage) {
+  Widget _buildListTile(BuildContext context, IconData icon, String title,
+      String debugMessage, VoidCallback onTap) {
     return Padding(
       padding: const EdgeInsets.only(top: 24.0, left: 12.0, right: 12.0),
       child: ListTile(
@@ -122,8 +151,9 @@ class CustomDrawer extends StatelessWidget {
           child: Text(title),
         ),
         onTap: () {
-          Navigator.pop(context);
+          Navigator.pop(context); // Close the drawer
           debugPrint(debugMessage);
+          onTap(); // Perform the navigation action
         },
       ),
     );
