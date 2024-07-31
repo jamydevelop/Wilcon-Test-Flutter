@@ -40,12 +40,16 @@ class _ExpandableCardState extends State<ExpandableCard> {
                   style: const TextStyle(color: Colors.white),
                 ),
               ),
-              trailing: AnimatedRotation(
-                turns: _isExpanded ? 0.5 : 0.0,
-                duration: const Duration(milliseconds: 200),
-                child: const Icon(
-                  Icons.expand_more,
-                  color: Colors.yellow,
+              trailing: Padding(
+                padding: const EdgeInsets.only(
+                    right: 12.0), // Add 12 pixels of padding on the right
+                child: AnimatedRotation(
+                  turns: _isExpanded ? 0.5 : 0.0,
+                  duration: const Duration(milliseconds: 200),
+                  child: const Icon(
+                    Icons.expand_more,
+                    color: Colors.yellow,
+                  ),
                 ),
               ),
               tilePadding: EdgeInsets.zero, // Remove padding around the tile
