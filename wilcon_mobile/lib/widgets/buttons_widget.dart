@@ -9,7 +9,7 @@ class ButtonClass {
           onPressed: () {
             // Action for button one
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Button One Pressed')),
+              const SnackBar(content: Text('Create New Pressed!')),
             );
           },
           style: ElevatedButton.styleFrom(
@@ -40,14 +40,15 @@ class ButtonClass {
   }
 
   Widget filterButton(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      width: double.infinity, // Make the button take all available width space
       child: SizedBox(
         height: 44, // Set the height to 44 pixels
         child: ElevatedButton(
           onPressed: () {
             // Action for button one
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Button One Pressed')),
+              const SnackBar(content: Text('Filter Pressed!')),
             );
           },
           style: ElevatedButton.styleFrom(

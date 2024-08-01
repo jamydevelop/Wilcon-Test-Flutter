@@ -37,7 +37,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                     BoxShadow(
                       color: Colors.black
                           .withOpacity(0.3), // Shadow color with opacity
-                      offset: const Offset(0, 4), // Shadow position
+                      offset: const Offset(1, 0), // Shadow position
                       blurRadius: 6, // Shadow blur radius
                     ),
                   ],
