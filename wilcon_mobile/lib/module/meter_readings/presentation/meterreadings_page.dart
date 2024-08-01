@@ -25,7 +25,10 @@ class _MeterReadingsPageState extends State<MeterReadingsPage> {
               children: [
                 CustomizedAppBar(),
                 BackToPrevScreen(),
-                HeaderBar(text: 'Meter Readings'),
+                HeaderBar(
+                  text: 'Meter Readings',
+                  isYellow: false,
+                ),
               ],
             ),
           ),

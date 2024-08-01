@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class HeaderBar extends StatelessWidget {
   final String text;
+  final bool isYellow;
 
-  const HeaderBar({super.key, required this.text});
+  const HeaderBar({super.key, required this.text, required this.isYellow});
 
   @override
   Widget build(BuildContext context) {
@@ -11,36 +12,36 @@ class HeaderBar extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 12.0),
       decoration: BoxDecoration(
-        color: const Color.fromRGBO(21, 66, 43, 1), //21, 66, 43
+        color: isYellow
+            ? const Color.fromRGBO(250, 206, 23, 1) // #FACE17
+            : const Color.fromRGBO(21, 66, 43, 1), // #15422B
         borderRadius: BorderRadius.circular(8.0), // Adjust the radius as needed
       ),
       child: text == "Notifications"
           ? Row(
-              mainAxisAlignment: MainAxisAlignment
-                  .spaceBetween, // Distribute space between widgets
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   text,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.0, // Font size for "Notifications" text
-                    fontWeight: FontWeight.w700, // Font weight
+                  style: TextStyle(
+                    color: isYellow ? Colors.black : Colors.white,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 Container(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 12.0, vertical: 8.0),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFFDDDD3), // Background color #FDDDD3
-                    borderRadius:
-                        BorderRadius.circular(12.0), // Rounded corners
+                    color: const Color(0xFFFDDDD3),
+                    borderRadius: BorderRadius.circular(12.0),
                   ),
-                  child: const Text(
-                    '4 New Notifications', // Replace with actual text if needed
+                  child: Text(
+                    '4 New Notifications',
                     style: TextStyle(
-                      color: Color(0xFF61220F), // Text color #61220F
-                      fontSize: 12.0, // Font size for additional text
-                      fontWeight: FontWeight.w700, // Font weight
+                      color: isYellow ? Colors.black : const Color(0xFF61220F),
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
@@ -48,10 +49,10 @@ class HeaderBar extends StatelessWidget {
             )
           : Text(
               text,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16.0, // Font size for general text
-                fontWeight: FontWeight.w700, // Font weight
+              style: TextStyle(
+                color: isYellow ? Colors.black : Colors.white,
+                fontSize: 16.0,
+                fontWeight: FontWeight.w700,
               ),
             ),
     );

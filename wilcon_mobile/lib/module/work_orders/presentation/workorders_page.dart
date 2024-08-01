@@ -49,7 +49,10 @@ class _WorkOrdersPageState extends State<WorkOrdersPage> {
                     children: [
                       const CustomizedAppBar(),
                       const BackToPrevScreen(),
-                      const HeaderBar(text: 'Work Orders'),
+                      const HeaderBar(
+                        text: 'Work Orders',
+                        isYellow: false,
+                      ),
                       const SizedBox(height: 12),
                       const SearchBarWidget(hintText: 'Search'),
                       const SizedBox(height: 12),

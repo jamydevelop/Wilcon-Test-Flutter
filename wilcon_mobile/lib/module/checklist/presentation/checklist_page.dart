@@ -26,7 +26,10 @@ class _ChecklistPageState extends State<ChecklistPage> {
               SizedBox(height: 24),
               CustomizedAppBar(),
               BackToPrevScreen(),
-              HeaderBar(text: 'Saved Checklist'),
+              HeaderBar(
+                text: 'Create Checklist',
+                isYellow: true,
+              ),
             ],
           ),
         ),

@@ -25,7 +25,10 @@ class _ScanQRCodePageState extends State<ScanQRCodePage> {
               children: [
                 CustomizedAppBar(),
                 BackToPrevScreen(),
-                HeaderBar(text: 'Scan QR Code'),
+                HeaderBar(
+                  text: 'Scan QR Code',
+                  isYellow: false,
+                ),
               ],
             ),
           ),

@@ -26,7 +26,10 @@ class _NotificationsPageState extends State<NotificationsPage> {
               const SizedBox(height: 24),
               const CustomizedAppBar(),
               const BackToPrevScreen(),
-              const HeaderBar(text: 'Notifications'),
+              const HeaderBar(
+                text: 'Notifications',
+                isYellow: false,
+              ),
               const SizedBox(height: 24),
               //const SizedBox(height: 12),
 

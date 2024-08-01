@@ -26,7 +26,10 @@ class _SmartBuildingSolutionPageState extends State<SmartBuildingSolutionPage> {
               children: [
                 CustomizedAppBar(),
                 BackToPrevScreen(),
-                HeaderBar(text: 'Smart Building Solutions'),
+                HeaderBar(
+                  text: 'Smart Building Solutions',
+                  isYellow: false,
+                ),
               ],
             ),
           ),

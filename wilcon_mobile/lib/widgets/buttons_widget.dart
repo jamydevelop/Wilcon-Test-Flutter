@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/widgets/filter_dialog_widget.dart';
 
 class ButtonClass {
   Widget createNewButton(BuildContext context) {
@@ -45,10 +46,19 @@ class ButtonClass {
       child: SizedBox(
         height: 44, // Set the height to 44 pixels
         child: ElevatedButton(
+          // onPressed: () {
+          //   // Action for button one
+          //   ScaffoldMessenger.of(context).showSnackBar(
+          //     const SnackBar(content: Text('Filter Pressed!')),
+          //   );
+
+          // },
           onPressed: () {
-            // Action for button one
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Filter Pressed!')),
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return const FilterDialog();
+              },
             );
           },
           style: ElevatedButton.styleFrom(

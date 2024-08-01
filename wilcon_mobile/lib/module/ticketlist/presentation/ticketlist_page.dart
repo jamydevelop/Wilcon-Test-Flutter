@@ -48,7 +48,10 @@ class _TicketlistPageState extends State<TicketlistPage> {
                     children: [
                       const CustomizedAppBar(),
                       const BackToPrevScreen(),
-                      const HeaderBar(text: 'My PM Tickets'),
+                      const HeaderBar(
+                        text: 'My PM Tickets',
+                        isYellow: false,
+                      ),
                       const SizedBox(height: 12),
                       const SearchBarWidget(hintText: 'Search'),
                       const SizedBox(height: 12),
