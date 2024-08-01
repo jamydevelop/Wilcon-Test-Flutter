@@ -28,6 +28,7 @@ class _WorkOrdersPageState extends State<WorkOrdersPage> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              const SizedBox(height: 24),
               const CustomizedAppBar(),
               const BackToPrevScreen(),
               const TicketHeader(text: 'Work Orders'),

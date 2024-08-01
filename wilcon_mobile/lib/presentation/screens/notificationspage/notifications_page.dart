@@ -23,6 +23,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              const SizedBox(height: 24),
               const CustomizedAppBar(),
               const BackToPrevScreen(),
               const TicketHeader(text: 'Notifications'),

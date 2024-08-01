@@ -23,6 +23,7 @@ class _ChecklistPageState extends State<ChecklistPage> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              SizedBox(height: 24),
               CustomizedAppBar(),
               BackToPrevScreen(),
               TicketHeader(text: 'Saved Checklist'),

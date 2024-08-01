@@ -22,28 +22,26 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        endDrawer: const CustomSidebar(),
-        //appBar: ,
+        endDrawer:
+            const CustomSidebar(), // Make sure this is not const if it is not a const constructor
         body: SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              const CustomizedAppBar(),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    // buttonClass.buttonOne(context),
-                    const SizedBox(height: 24),
-                    _headerUser(),
-                    const SizedBox(height: 24),
-                    _homePageBody(),
-                    const SizedBox(height: 24),
-                  ],
-                ),
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                const CustomizedAppBar(),
+                const SizedBox(height: 24),
+                _headerUser(),
+                const SizedBox(height: 24),
+                _homePageBody(),
+
+                //SizedBox(height: 24),
+                //const SizedBox(height: 12),
+
+                // Use Expanded to fill remaining space
+              ],
+            ),
           ),
         ),
       ),
