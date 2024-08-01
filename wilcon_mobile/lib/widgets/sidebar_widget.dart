@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/checklistpage/presentation/checklist_page.dart';
+import 'package:wilcon_mobile/module/checklist/presentation/checklist_page.dart';
 import 'package:wilcon_mobile/module/homepage/presentation/home_page.dart';
-import 'package:wilcon_mobile/module/meterreadingspage/presentation/meterreadings_page.dart';
-import 'package:wilcon_mobile/module/notificationspage/presentation/notifications_page.dart';
-import 'package:wilcon_mobile/module/workorderspage/presentation/workorders_page.dart'; // Import your pages
+import 'package:wilcon_mobile/module/meter_readings/presentation/meterreadings_page.dart';
+import 'package:wilcon_mobile/module/notifications/presentation/notifications_page.dart';
+import 'package:wilcon_mobile/module/work_orders/presentation/workorders_page.dart'; // Import your pages
 
 class CustomSidebar extends StatelessWidget {
   const CustomSidebar({super.key});

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/checklistpage/presentation/checklist_page.dart';
-import 'package:wilcon_mobile/module/meterreadingspage/presentation/meterreadings_page.dart';
-import 'package:wilcon_mobile/module/scanqrcodepage/presentation/scanqrcode_page.dart';
-import 'package:wilcon_mobile/module/smartbuildingsolution/presentation/smartbuildingsolution_page.dart';
-import 'package:wilcon_mobile/module/workorderspage/presentation/workorders_page.dart';
+import 'package:wilcon_mobile/module/checklist/presentation/checklist_page.dart';
+import 'package:wilcon_mobile/module/meter_readings/presentation/meterreadings_page.dart';
+import 'package:wilcon_mobile/module/scan_qr_code/presentation/scanqrcode_page.dart';
+import 'package:wilcon_mobile/module/smart_building_solution/presentation/smartbuildingsolution_page.dart';
+import 'package:wilcon_mobile/module/work_orders/presentation/workorders_page.dart';
 import 'package:wilcon_mobile/widgets/buttons_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
-import '../../ticketlistpage/presentation/ticketlist_page.dart';
+import '../../ticketlist/presentation/ticketlist_page.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
