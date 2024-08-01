@@ -30,12 +30,12 @@ class _CardPrimaryState extends State<CardPrimary> {
           margin: EdgeInsets.zero, // Remove any external margin
           elevation: 0.0,
           color: const Color.fromRGBO(21, 66, 43, 1),
-          shape: RoundedRectangleBorder(
-            side: const BorderSide(
+          shape: const RoundedRectangleBorder(
+            side: BorderSide(
               color: Colors.grey, // Color of the outline
               width: 1.0, // Width of the outline
             ),
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               topLeft: Radius.circular(8.0), // Rounded top-left corner
               topRight: Radius.circular(8.0), // Rounded top-right corner
             ), // No border radius for bottom corners
