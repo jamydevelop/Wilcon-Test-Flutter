@@ -35,8 +35,10 @@ class _CardPrimaryState extends State<CardPrimary> {
               color: Colors.grey, // Color of the outline
               width: 1.0, // Width of the outline
             ),
-            borderRadius:
-                BorderRadius.circular(4.0), // Optional: adjust if needed
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(8.0), // Rounded top-left corner
+              topRight: Radius.circular(8.0), // Rounded top-right corner
+            ), // No border radius for bottom corners
           ),
           child: Column(
             children: [

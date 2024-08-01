@@ -16,26 +16,26 @@ class SearchBarWidget extends StatelessWidget {
             fontSize: 16.0,
             fontWeight: FontWeight.w700,
           ),
-          border: const OutlineInputBorder(
-            borderSide: BorderSide(
+          border: OutlineInputBorder(
+            borderSide: const BorderSide(
               color: Colors.grey, // Border color
               width: 1.0, // Border width
             ),
-            borderRadius: BorderRadius.zero, // No rounded corners
+            borderRadius: BorderRadius.circular(8.0), // Updated border radius
           ),
-          focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
               color: Colors.blue, // Color when focused
               width: 1.0, // Border width when focused
             ),
-            borderRadius: BorderRadius.zero, // No rounded corners
+            borderRadius: BorderRadius.circular(8.0), // Updated border radius
           ),
-          enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
               color: Colors.grey, // Color when enabled
               width: 1.0, // Border width when enabled
             ),
-            borderRadius: BorderRadius.zero, // No rounded corners
+            borderRadius: BorderRadius.circular(8.0), // Updated border radius
           ),
           suffixIcon: const Icon(
             Icons.search,
