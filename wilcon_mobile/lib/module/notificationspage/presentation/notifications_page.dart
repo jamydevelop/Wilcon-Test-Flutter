@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/presentation/widgets/appbar_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/back_screen_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/sidebar_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/header_bar_widget.dart';
+import 'package:wilcon_mobile/widgets/appbar_widget.dart';
+import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
+import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
+import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
 
 class NotificationsPage extends StatefulWidget {
   const NotificationsPage({super.key});
@@ -37,7 +37,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                     BoxShadow(
                       color: Colors.black
                           .withOpacity(0.3), // Shadow color with opacity
-                      offset: Offset(0, 4), // Shadow position
+                      offset: const Offset(0, 4), // Shadow position
                       blurRadius: 6, // Shadow blur radius
                     ),
                   ],

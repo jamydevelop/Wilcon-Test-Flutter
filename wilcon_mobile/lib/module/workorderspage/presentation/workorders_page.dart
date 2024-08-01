@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/presentation/widgets/appbar_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/back_screen_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/buttons_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/sidebar_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/card_primary_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/search_bar_widget.dart';
-import '../../widgets/header_bar_widget.dart';
+import 'package:wilcon_mobile/widgets/appbar_widget.dart';
+import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
+import 'package:wilcon_mobile/widgets/buttons_widget.dart';
+import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
+import 'package:wilcon_mobile/widgets/card_primary_widget.dart';
+import 'package:wilcon_mobile/widgets/search_bar_widget.dart';
+import '../../../widgets/header_bar_widget.dart';
 
 class WorkOrdersPage extends StatefulWidget {
   const WorkOrdersPage({super.key});

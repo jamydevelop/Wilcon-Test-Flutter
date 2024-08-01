@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/presentation/screens/checklistpage/checklist_page.dart';
-import 'package:wilcon_mobile/presentation/screens/meterreadingspage/meterreadings_page.dart';
-import 'package:wilcon_mobile/presentation/screens/scanqrcodepage/scanqrcode_page.dart';
-import 'package:wilcon_mobile/presentation/screens/smartbuildingsolution/smartbuildingsolution_page.dart';
-import 'package:wilcon_mobile/presentation/screens/workorderspage/workorders_page.dart';
-import 'package:wilcon_mobile/presentation/widgets/button_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/sidebar_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/appbar_widget.dart';
-import '../ticketlistpage/ticketlist_page.dart';
+import 'package:wilcon_mobile/module/checklistpage/presentation/checklist_page.dart';
+import 'package:wilcon_mobile/module/meterreadingspage/presentation/meterreadings_page.dart';
+import 'package:wilcon_mobile/module/scanqrcodepage/presentation/scanqrcode_page.dart';
+import 'package:wilcon_mobile/module/smartbuildingsolution/presentation/smartbuildingsolution_page.dart';
+import 'package:wilcon_mobile/module/workorderspage/presentation/workorders_page.dart';
+import 'package:wilcon_mobile/widgets/buttons_widget.dart';
+import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
+import 'package:wilcon_mobile/widgets/appbar_widget.dart';
+import '../../ticketlistpage/presentation/ticketlist_page.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});

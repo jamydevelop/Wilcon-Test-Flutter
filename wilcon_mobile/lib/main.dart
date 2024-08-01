@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wilcon_mobile/presentation/screens/login/login_page.dart';
+import 'package:wilcon_mobile/module/auth/presentation/login/login_page.dart';
 
 void main() {
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,

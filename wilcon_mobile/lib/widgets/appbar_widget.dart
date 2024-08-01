@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/presentation/screens/notificationspage/notifications_page.dart';
+import 'package:wilcon_mobile/module/notificationspage/presentation/notifications_page.dart';
 
 class CustomizedAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;

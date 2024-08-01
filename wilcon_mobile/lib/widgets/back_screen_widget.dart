@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/presentation/screens/homepage/home_page.dart';
+import 'package:wilcon_mobile/module/homepage/presentation/home_page.dart';
 
 class BackToPrevScreen extends StatelessWidget {
   const BackToPrevScreen({super.key});
