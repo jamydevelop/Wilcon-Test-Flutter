@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/presentation/widgets/appbar_01.dart';
+import 'package:wilcon_mobile/presentation/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/back_screen_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/custom_drawer.dart';
+import 'package:wilcon_mobile/presentation/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/header_widget.dart';
 
 class ChecklistPage extends StatefulWidget {
@@ -17,13 +17,13 @@ class _ChecklistPageState extends State<ChecklistPage> {
     return const Scaffold(
         body: SafeArea(
       child: Scaffold(
-        endDrawer: CustomDrawer(),
+        endDrawer: CustomSidebar(),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 12.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              AppBar01Class(),
+              CustomizedAppBar(),
               BackToPrevScreen(),
               TicketHeader(text: 'Saved Checklist'),
             ],

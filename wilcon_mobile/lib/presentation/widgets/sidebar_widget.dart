@@ -7,8 +7,8 @@ import 'package:wilcon_mobile/presentation/screens/meterreadingspage/meterreadin
 import 'package:wilcon_mobile/presentation/screens/notificationspage/notifications_page.dart';
 import 'package:wilcon_mobile/presentation/screens/workorderspage/workorders_page.dart'; // Import your pages
 
-class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({super.key});
+class CustomSidebar extends StatelessWidget {
+  const CustomSidebar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +97,8 @@ class CustomDrawer extends StatelessWidget {
                     () => Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const NotificationsPage()),
+                        builder: (context) => const NotificationsPage(),
+                      ),
                     ),
                   ),
                 ],

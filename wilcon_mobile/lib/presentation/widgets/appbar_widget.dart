@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/presentation/screens/notificationspage/notifications_page.dart';
 
-class AppBar01Class extends StatelessWidget implements PreferredSizeWidget {
+class CustomizedAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
-  const AppBar01Class({super.key, this.height = kToolbarHeight});
+  const CustomizedAppBar({super.key, this.height = kToolbarHeight});
 
   @override
   Size get preferredSize => Size.fromHeight(height);
@@ -35,7 +36,13 @@ class AppBar01Class extends StatelessWidget implements PreferredSizeWidget {
                 IconButton(
                   icon: const Icon(Icons.notifications, color: Colors.black),
                   onPressed: () {
-                    // Notification action
+                    debugPrint("Notifications Pressed!");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const NotificationsPage(),
+                      ),
+                    );
                   },
                 ),
                 IconButton(

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/presentation/widgets/appbar_01.dart';
+import 'package:wilcon_mobile/presentation/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/back_screen_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/custom_drawer.dart';
-import 'package:wilcon_mobile/presentation/widgets/expandablecard.dart';
+import 'package:wilcon_mobile/presentation/widgets/button_widget.dart';
+import 'package:wilcon_mobile/presentation/widgets/sidebar_widget.dart';
+import 'package:wilcon_mobile/presentation/widgets/workorders_card_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/searchbar_widget.dart';
 import '../../widgets/header_widget.dart';
 
@@ -14,25 +15,36 @@ class WorkOrdersPage extends StatefulWidget {
 }
 
 class _WorkOrdersPageState extends State<WorkOrdersPage> {
+  final ButtonClass buttonClass = ButtonClass();
+
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Scaffold(
-        endDrawer: CustomDrawer(),
+        endDrawer: const CustomSidebar(),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.0),
+          padding:
+              const EdgeInsets.symmetric(horizontal: 12.0), // Adjust padding
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              AppBar01Class(),
-              BackToPrevScreen(),
-              TicketHeader(text: 'Work Orders'),
-              SizedBox(height: 12),
-              SearchBarWidget(
+              const CustomizedAppBar(),
+              const BackToPrevScreen(),
+              const TicketHeader(text: 'Work Orders'),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  buttonClass.createNewButton(context),
+                  const SizedBox(width: 8), // Add spacing between the buttons
+                  buttonClass.filterButton(context),
+                ],
+              ),
+              const SizedBox(height: 12),
+              const SearchBarWidget(
                 hintText: 'Search',
               ),
-              SizedBox(height: 12),
-              Expanded(
+              const SizedBox(height: 12),
+              const Expanded(
                 child: Center(
                   child: ExpandableCardPage(), // body: ,
                 ),
@@ -43,10 +55,6 @@ class _WorkOrdersPageState extends State<WorkOrdersPage> {
       ),
     );
   }
-
-  // Widget _workOrdersPageBody() {
-  //   return const Text('This is Work Orders Page! :)');
-  // }
 }
 
 class ExpandableCardPage extends StatelessWidget {
@@ -57,7 +65,7 @@ class ExpandableCardPage extends StatelessWidget {
     return ListView(
       children: const [
         CardContainer(
-          child: ExpandableCard(
+          child: WorkOrdersCard(
             title: 'Ticket #1466',
             rowTitles: [
               'By',
@@ -85,7 +93,7 @@ class ExpandableCardPage extends StatelessWidget {
         ),
         SizedBox(height: 0),
         CardContainer(
-          child: ExpandableCard(
+          child: WorkOrdersCard(
             title: 'Ticket #1467',
             rowTitles: [
               'By',
@@ -113,7 +121,7 @@ class ExpandableCardPage extends StatelessWidget {
         ),
         SizedBox(height: 0),
         CardContainer(
-          child: ExpandableCard(
+          child: WorkOrdersCard(
             title: 'Ticket #1468',
             rowTitles: [
               'By',

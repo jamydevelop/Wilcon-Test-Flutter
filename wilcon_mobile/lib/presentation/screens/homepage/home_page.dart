@@ -4,9 +4,9 @@ import 'package:wilcon_mobile/presentation/screens/meterreadingspage/meterreadin
 import 'package:wilcon_mobile/presentation/screens/scanqrcodepage/scanqrcode_page.dart';
 import 'package:wilcon_mobile/presentation/screens/smartbuildingsolution/smartbuildingsolution_page.dart';
 import 'package:wilcon_mobile/presentation/screens/workorderspage/workorders_page.dart';
-import 'package:wilcon_mobile/presentation/widgets/button_class.dart';
-import 'package:wilcon_mobile/presentation/widgets/custom_drawer.dart';
-import 'package:wilcon_mobile/presentation/widgets/appbar_01.dart';
+import 'package:wilcon_mobile/presentation/widgets/button_widget.dart';
+import 'package:wilcon_mobile/presentation/widgets/sidebar_widget.dart';
+import 'package:wilcon_mobile/presentation/widgets/appbar_widget.dart';
 import '../ticketlistpage/ticketlist_page.dart';
 
 class Homepage extends StatefulWidget {
@@ -22,13 +22,13 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        endDrawer: const CustomDrawer(),
+        endDrawer: const CustomSidebar(),
         //appBar: ,
         body: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              const AppBar01Class(),
+              const CustomizedAppBar(),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Column(
