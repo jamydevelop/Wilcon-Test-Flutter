@@ -11,11 +11,13 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white, //--------------------------------------
-      body: SizedBox(
-        child: SafeArea(
-          child: _buildUI(),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white, //--------------------------------------
+        body: SizedBox(
+          child: SafeArea(
+            child: _buildUI(),
+          ),
         ),
       ),
     );
