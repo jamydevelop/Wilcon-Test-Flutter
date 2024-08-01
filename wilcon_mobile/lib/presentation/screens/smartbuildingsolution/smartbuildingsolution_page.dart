@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/presentation/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/sidebar_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/header_widget.dart';
+import 'package:wilcon_mobile/presentation/widgets/header_bar_widget.dart';
 
 class SmartBuildingSolutionPage extends StatefulWidget {
   const SmartBuildingSolutionPage({super.key});
@@ -26,7 +26,7 @@ class _SmartBuildingSolutionPageState extends State<SmartBuildingSolutionPage> {
               children: [
                 CustomizedAppBar(),
                 BackToPrevScreen(),
-                TicketHeader(text: 'Smart Building Solutions'),
+                HeaderBar(text: 'Smart Building Solutions'),
               ],
             ),
           ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/presentation/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/sidebar_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/header_widget.dart';
+import 'package:wilcon_mobile/presentation/widgets/header_bar_widget.dart';
 
 class NotificationsPage extends StatefulWidget {
   const NotificationsPage({super.key});
@@ -26,7 +26,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
               const SizedBox(height: 24),
               const CustomizedAppBar(),
               const BackToPrevScreen(),
-              const TicketHeader(text: 'Notifications'),
+              const HeaderBar(text: 'Notifications'),
               const SizedBox(height: 24),
               //const SizedBox(height: 12),
 

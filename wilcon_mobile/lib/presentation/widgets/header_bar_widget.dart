@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class TicketHeader extends StatelessWidget {
+class HeaderBar extends StatelessWidget {
   final String text;
 
-  const TicketHeader({super.key, required this.text});
+  const HeaderBar({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

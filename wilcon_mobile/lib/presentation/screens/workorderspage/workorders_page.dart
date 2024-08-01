@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/presentation/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/back_screen_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/button_widget.dart';
+import 'package:wilcon_mobile/presentation/widgets/buttons_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/sidebar_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/workorders_card_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/searchbar_widget.dart';
-import '../../widgets/header_widget.dart';
+import 'package:wilcon_mobile/presentation/widgets/card_primary_widget.dart';
+import 'package:wilcon_mobile/presentation/widgets/search_bar_widget.dart';
+import '../../widgets/header_bar_widget.dart';
 
 class WorkOrdersPage extends StatefulWidget {
   const WorkOrdersPage({super.key});
@@ -31,7 +31,7 @@ class _WorkOrdersPageState extends State<WorkOrdersPage> {
               const SizedBox(height: 24),
               const CustomizedAppBar(),
               const BackToPrevScreen(),
-              const TicketHeader(text: 'Work Orders'),
+              const HeaderBar(text: 'Work Orders'),
               const SizedBox(height: 12),
               Row(
                 children: [
@@ -66,7 +66,7 @@ class ExpandableCardPage extends StatelessWidget {
     return ListView(
       children: const [
         CardContainer(
-          child: WorkOrdersCard(
+          child: CardPrimary(
             title: 'Ticket #1466',
             rowTitles: [
               'By',
@@ -94,7 +94,7 @@ class ExpandableCardPage extends StatelessWidget {
         ),
         SizedBox(height: 0),
         CardContainer(
-          child: WorkOrdersCard(
+          child: CardPrimary(
             title: 'Ticket #1467',
             rowTitles: [
               'By',
@@ -122,7 +122,7 @@ class ExpandableCardPage extends StatelessWidget {
         ),
         SizedBox(height: 0),
         CardContainer(
-          child: WorkOrdersCard(
+          child: CardPrimary(
             title: 'Ticket #1468',
             rowTitles: [
               'By',

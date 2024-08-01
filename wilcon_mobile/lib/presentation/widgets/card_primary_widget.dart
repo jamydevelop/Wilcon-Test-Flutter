@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class WorkOrdersCard extends StatefulWidget {
+class CardPrimary extends StatefulWidget {
   final String title;
   final List<String> rowTitles;
   final List<String> rowContents;
 
-  const WorkOrdersCard({
+  const CardPrimary({
     super.key,
     required this.title,
     required this.rowTitles,
@@ -14,10 +14,10 @@ class WorkOrdersCard extends StatefulWidget {
 
   @override
   // ignore: library_private_types_in_public_api
-  _WorkOrdersCardState createState() => _WorkOrdersCardState();
+  _CardPrimaryState createState() => _CardPrimaryState();
 }
 
-class _WorkOrdersCardState extends State<WorkOrdersCard> {
+class _CardPrimaryState extends State<CardPrimary> {
   bool _isExpanded = true;
 
   @override

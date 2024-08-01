@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/presentation/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/sidebar_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/header_widget.dart';
+import 'package:wilcon_mobile/presentation/widgets/header_bar_widget.dart';
 
 class ChecklistPage extends StatefulWidget {
   const ChecklistPage({super.key});
@@ -26,7 +26,7 @@ class _ChecklistPageState extends State<ChecklistPage> {
               SizedBox(height: 24),
               CustomizedAppBar(),
               BackToPrevScreen(),
-              TicketHeader(text: 'Saved Checklist'),
+              HeaderBar(text: 'Saved Checklist'),
             ],
           ),
         ),

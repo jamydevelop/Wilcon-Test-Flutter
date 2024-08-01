@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/presentation/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/presentation/widgets/sidebar_widget.dart';
-import 'package:wilcon_mobile/presentation/widgets/header_widget.dart';
+import 'package:wilcon_mobile/presentation/widgets/header_bar_widget.dart';
 
 class MeterReadingsPage extends StatefulWidget {
   const MeterReadingsPage({super.key});
@@ -25,7 +25,7 @@ class _MeterReadingsPageState extends State<MeterReadingsPage> {
               children: [
                 CustomizedAppBar(),
                 BackToPrevScreen(),
-                TicketHeader(text: 'Meter Readings'),
+                HeaderBar(text: 'Meter Readings'),
               ],
             ),
           ),
