@@ -5,7 +5,7 @@ import 'package:wilcon_mobile/module/checklist/presentation/checklist_page.dart'
 import 'package:wilcon_mobile/module/homepage/presentation/home_page.dart';
 import 'package:wilcon_mobile/module/meter_readings/presentation/meterreadings_page.dart';
 import 'package:wilcon_mobile/module/notifications/presentation/notifications_page.dart';
-import 'package:wilcon_mobile/module/work_orders/presentation/workorders_page.dart'; // Import your pages
+import 'package:wilcon_mobile/module/work_orders/presentation/my_workorders/my_workorders_page.dart'; // Import your pages
 
 class CustomSidebar extends StatelessWidget {
   const CustomSidebar({super.key});
@@ -71,7 +71,7 @@ class CustomSidebar extends StatelessWidget {
                     () => Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const WorkOrdersPage()),
+                          builder: (context) => const MyWorkOrdersPage()),
                     ),
                   ),
                   _buildListTile(

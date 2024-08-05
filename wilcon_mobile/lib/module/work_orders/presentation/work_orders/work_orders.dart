@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/checklist/presentation/widget/checklist_items_data.dart';
-import 'package:wilcon_mobile/module/checklist/presentation/widget/four_buttons_example_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
+import 'package:wilcon_mobile/widgets/buttons_widget.dart';
+import 'package:wilcon_mobile/widgets/card_temporary_data.dart';
+import 'package:wilcon_mobile/widgets/search_bar_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
 
-class ChecklistPage extends StatefulWidget {
-  const ChecklistPage({super.key});
+class WorkOrders extends StatefulWidget {
+  const WorkOrders({super.key});
 
   @override
-  State<ChecklistPage> createState() => _ChecklistPageState();
+  State<WorkOrders> createState() => _WorkOrdersState();
 }
 
-class _ChecklistPageState extends State<ChecklistPage> {
+class _WorkOrdersState extends State<WorkOrders> {
+  final ButtonClass buttonClass = ButtonClass();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,38 +44,31 @@ class _ChecklistPageState extends State<ChecklistPage> {
                   ),
                   padding: const EdgeInsets.all(
                       12.0), // Padding inside the container
-                  child: const Column(
+                  child: Column(
                     children: [
-                      CustomizedAppBar(),
-                      BackToPrevScreen(),
-                      HeaderBar(
-                        text: 'Create Checklist',
-                        isYellow: true,
+                      const CustomizedAppBar(),
+                      const BackToPrevScreen(),
+                      const HeaderBar(
+                        text: 'Work Orders',
+                        isYellow: false,
                       ),
-                      SizedBox(height: 12),
-                      SearchBarWidget(hintText: 'Search'),
-                      SizedBox(height: 12),
-                      SizedBox(height: 24),
-                      FourButtonsExample(),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Input simple instruction here. Make it short.',
-                          style: TextStyle(
-                            fontFamily: 'OpenSans',
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            height: 20 / 14, // line-height / font-size
-                            letterSpacing: 0.001,
-                          ),
-                        ),
-                      ),
+                      const SizedBox(height: 12),
+                      const SearchBarWidget(hintText: 'Search'),
+                      const SizedBox(height: 12),
+                      buttonClass.filterButton(context),
+                      const SizedBox(height: 24),
                     ],
                   ),
                 ),
-                const Expanded(
-                  child:
-                      ChecklistItems(), // Using a separate widget for the list
+                Expanded(
+                  child: Center(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(
+                          horizontal:
+                              12.0), // Add 12px margin on left and right
+                      child: const CardTemporaryData(), // body: ,
+                    ),
+                  ),
                 ),
               ],
             ),

@@ -3,11 +3,12 @@ import 'package:wilcon_mobile/module/checklist/presentation/checklist_page.dart'
 import 'package:wilcon_mobile/module/meter_readings/presentation/meterreadings_page.dart';
 import 'package:wilcon_mobile/module/scan_qr_code/presentation/scanqrcode_page.dart';
 import 'package:wilcon_mobile/module/smart_building_solution/presentation/smartbuildingsolution_page.dart';
-import 'package:wilcon_mobile/module/work_orders/presentation/workorders_page.dart';
+import 'package:wilcon_mobile/module/work_orders/presentation/my_workorders/my_workorders_page.dart';
+import 'package:wilcon_mobile/module/work_orders/presentation/work_orders/work_orders.dart';
 import 'package:wilcon_mobile/widgets/buttons_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
-import '../../ticketlist/presentation/ticketlist_page.dart';
+import '../../my_pm_tickets/presentation/my_pm_ticket_page.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -93,7 +94,7 @@ class _HomepageState extends State<Homepage> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const WorkOrdersPage()),
+                              builder: (context) => const MyWorkOrdersPage()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -139,7 +140,7 @@ class _HomepageState extends State<Homepage> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const TicketlistPage()),
+                              builder: (context) => const MyPMTickets()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -277,7 +278,7 @@ class _HomepageState extends State<Homepage> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const WorkOrdersPage()),
+                              builder: (context) => const WorkOrders()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
