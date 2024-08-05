@@ -3,6 +3,7 @@ import 'package:wilcon_mobile/module/checklist/presentation/widget/checklist_ite
 import 'package:wilcon_mobile/module/checklist/presentation/widget/four_buttons_example_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
+import 'package:wilcon_mobile/widgets/search_bar_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
 
