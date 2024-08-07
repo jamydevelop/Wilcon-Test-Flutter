@@ -77,6 +77,5 @@ class _CreateNewWorkordersPageState extends State<CreateNewWorkordersPage> {
         ),
       ),
     );
-    ;
   }
 }
