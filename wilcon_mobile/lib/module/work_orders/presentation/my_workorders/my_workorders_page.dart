@@ -58,7 +58,7 @@ class _MyWorkOrdersPageState extends State<MyWorkOrdersPage> {
                       const SizedBox(height: 12),
                       ButtonContainer(),
                       // buttonClass.filterButton(context),
-                      const SizedBox(height: 24),
+                      const SizedBox(height: 12),
                     ],
                   ),
                 ),
