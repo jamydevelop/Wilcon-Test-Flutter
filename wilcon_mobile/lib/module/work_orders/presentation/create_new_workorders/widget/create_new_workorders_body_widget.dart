@@ -41,6 +41,10 @@ class _CreateNewWorkordersBodyWidgetState
               _readingDate(),
               const SizedBox(height: 12),
               _breakdownCheckbox(), // Add the Checkbox widget here
+              _targetDateText("12/07/2023"),
+              const SizedBox(height: 12),
+              _subHeader("Equipment"),
+              const SizedBox(height: 12),
               _testWidget01(),
               _testWidget02(),
               _testWidget01(),
@@ -69,7 +73,7 @@ class _CreateNewWorkordersBodyWidgetState
             });
           },
         ),
-        Expanded(
+        const Expanded(
           child: Text(
             'Breakdown',
             style: TextStyle(fontSize: 16),
@@ -415,6 +419,70 @@ class _CreateNewWorkordersBodyWidgetState
         suffixIcon: Icon(Icons.calendar_today),
         border: OutlineInputBorder(),
       ),
+    );
+  }
+
+  Widget _targetDateText(String targetDate) {
+    return Text(
+      'Target date: $targetDate',
+      style: const TextStyle(
+        fontSize: 12, // font-size in pixels
+        fontStyle: FontStyle.normal, // font-style: normal
+        fontWeight: FontWeight.w600, // font-weight: 600
+        height:
+            20 / 12, // line-height relative to font-size, height: 20px / 12px
+        letterSpacing: 0.048, // letter-spacing in pixels
+      ),
+    );
+  }
+
+  Widget _subHeader(String myTitle) {
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        // Border layer
+        Positioned.fill(
+          child: Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(4.0),
+                topRight: Radius.circular(4.0),
+              ),
+              border: Border(
+                top: BorderSide(
+                  color: Colors.white,
+                  width: 4.0,
+                ),
+              ),
+            ),
+          ),
+        ),
+        // Main content
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 12.0),
+          decoration: const BoxDecoration(
+            color: Color.fromRGBO(21, 66, 43, 1),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(4.0),
+              topRight: Radius.circular(4.0),
+              bottomLeft: Radius.circular(0.0),
+              bottomRight: Radius.circular(0.0),
+            ),
+          ),
+          child: Text(
+            myTitle, // Use the parameter directly
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w700,
+              height: 20 / 14,
+              letterSpacing: 0.028,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
