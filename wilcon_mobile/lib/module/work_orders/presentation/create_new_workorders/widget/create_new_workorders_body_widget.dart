@@ -10,39 +10,72 @@ class CreateNewWorkordersBodyWidget extends StatefulWidget {
 
 class _CreateNewWorkordersBodyWidgetState
     extends State<CreateNewWorkordersBodyWidget> {
+  bool _isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(
             horizontal: 12.0), // 12px margin on left and right
-        child: Column(
-          crossAxisAlignment:
-              CrossAxisAlignment.start, // Align children to the start (left)
-          children: [
-            const SizedBox(height: 12),
-            _searchLocation(),
-            const SizedBox(height: 12),
-            _typeDropDown(),
-            const SizedBox(height: 12),
-            _categoryDropDown(),
-            const SizedBox(height: 12),
-            _subCategoryDropDown(),
-            const SizedBox(height: 12),
-            _issueDescription(),
-            const SizedBox(height: 12),
-            _priorityLevel(),
-            const SizedBox(height: 12),
-            _serviceProvider(),
-            const SizedBox(
-              height: 12,
-            ),
-            _readingDate(),
-            _testWidget01(),
-            _testWidget02(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment:
+                CrossAxisAlignment.start, // Align children to the start (left)
+            children: [
+              const SizedBox(height: 12),
+              _searchLocation(),
+              const SizedBox(height: 12),
+              _typeDropDown(),
+              const SizedBox(height: 12),
+              _categoryDropDown(),
+              const SizedBox(height: 12),
+              _subCategoryDropDown(),
+              const SizedBox(height: 12),
+              _issueDescription(),
+              const SizedBox(height: 12),
+              _priorityLevel(),
+              const SizedBox(height: 12),
+              _serviceProvider(),
+              const SizedBox(height: 12),
+              _readingDate(),
+              const SizedBox(height: 12),
+              _breakdownCheckbox(), // Add the Checkbox widget here
+              _testWidget01(),
+              _testWidget02(),
+              _testWidget01(),
+              _testWidget02(),
+              _testWidget01(),
+              _testWidget02(),
+              _testWidget01(),
+              _testWidget02(),
+              _testWidget01(),
+              _testWidget02(),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  Widget _breakdownCheckbox() {
+    return Row(
+      children: [
+        Checkbox(
+          value: _isChecked,
+          onChanged: (bool? newValue) {
+            setState(() {
+              _isChecked = newValue ?? false;
+            });
+          },
+        ),
+        Expanded(
+          child: Text(
+            'Breakdown',
+            style: TextStyle(fontSize: 16),
+          ),
+        ),
+      ],
     );
   }
 
