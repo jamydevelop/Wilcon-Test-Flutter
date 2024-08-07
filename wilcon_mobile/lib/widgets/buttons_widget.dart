@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/module/work_orders/presentation/create_new_workorders/create_new_workorders_page.dart';
 import 'package:wilcon_mobile/widgets/filter_dialog_widget.dart';
 
 class ButtonClass {
@@ -9,8 +10,10 @@ class ButtonClass {
         child: ElevatedButton(
           onPressed: () {
             // Action for button one
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Create New Pressed!')),
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const CreateNewWorkordersPage()),
             );
           },
           style: ElevatedButton.styleFrom(
