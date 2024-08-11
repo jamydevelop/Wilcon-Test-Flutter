@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/checklist/presentation/checklist_page.dart';
+import 'package:wilcon_mobile/module/work_orders/list_of_checklist/presentation/list_of_checklist_page.dart';
 import 'package:wilcon_mobile/module/meter_readings/presentation/meterreadings_page.dart';
 import 'package:wilcon_mobile/module/scan_qr_code/presentation/scanqrcode_page.dart';
 import 'package:wilcon_mobile/module/smart_building_solution/presentation/smartbuildingsolution_page.dart';
-import 'package:wilcon_mobile/module/work_orders/presentation/my_workorders/my_workorders_page.dart';
-import 'package:wilcon_mobile/module/work_orders/presentation/work_orders/work_orders.dart';
+import 'package:wilcon_mobile/module/work_orders/work_orders/workorders_page.dart';
+import 'package:wilcon_mobile/module/work_orders/my_work_orders/my_work_orders_page.dart';
 import 'package:wilcon_mobile/widgets/buttons_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
@@ -94,7 +94,7 @@ class _HomepageState extends State<Homepage> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const MyWorkOrdersPage()),
+                              builder: (context) => const MyWorkOrders()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -234,7 +234,8 @@ class _HomepageState extends State<Homepage> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ChecklistPage()),
+                              builder: (context) =>
+                                  const ListOfChecklistPage()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -278,7 +279,7 @@ class _HomepageState extends State<Homepage> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const WorkOrders()),
+                              builder: (context) => const WorkOrdersPage()),
                         );
                       },
                       style: ElevatedButton.styleFrom(

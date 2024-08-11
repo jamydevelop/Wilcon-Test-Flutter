@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/checklist/presentation/widget/checklist_items_data.dart';
-import 'package:wilcon_mobile/module/checklist/presentation/widget/four_buttons_example_widget.dart';
+import 'package:wilcon_mobile/module/work_orders/list_of_checklist/presentation/widget/checklist_items_data.dart';
+import 'package:wilcon_mobile/module/work_orders/list_of_checklist/presentation/widget/four_buttons_example_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/widgets/search_bar_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
 
-class ChecklistPage extends StatefulWidget {
-  const ChecklistPage({super.key});
+class ListOfChecklistPage extends StatefulWidget {
+  const ListOfChecklistPage({super.key});
 
   @override
-  State<ChecklistPage> createState() => _ChecklistPageState();
+  State<ListOfChecklistPage> createState() => _ListOfChecklistPageState();
 }
 
-class _ChecklistPageState extends State<ChecklistPage> {
+class _ListOfChecklistPageState extends State<ListOfChecklistPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +75,40 @@ class _ChecklistPageState extends State<ChecklistPage> {
                   child:
                       ChecklistItems(), // Using a separate widget for the list
                 ),
+                saveTicketButton(context),
               ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget saveTicketButton(BuildContext context) {
+    return SizedBox(
+      height: 44, // Set the height to 44 pixels
+      child: ElevatedButton(
+        onPressed: () {
+          // Action for button
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const ListOfChecklistPage()),
+          );
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor:
+              const Color(0xFF166E16), // Change button color to #166E16
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.zero, // Rounded corners
+          ),
+        ),
+        child: const Center(
+          child: Text(
+            'Next',
+            style: TextStyle(
+              fontSize: 16,
+              color: Color(0xFFF4F7FA), // Change text color to #F4F7FA
             ),
           ),
         ),

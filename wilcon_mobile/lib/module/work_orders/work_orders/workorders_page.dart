@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/work_orders/presentation/widget/buttons_container.dart';
+import 'package:wilcon_mobile/module/work_orders/widget/buttons_container.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/widgets/buttons_widget.dart';
@@ -8,14 +8,14 @@ import 'package:wilcon_mobile/widgets/search_bar_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
 
-class MyWorkOrdersPage extends StatefulWidget {
-  const MyWorkOrdersPage({super.key});
+class WorkOrdersPage extends StatefulWidget {
+  const WorkOrdersPage({super.key});
 
   @override
-  State<MyWorkOrdersPage> createState() => _MyWorkOrdersPageState();
+  State<WorkOrdersPage> createState() => _WorkOrdersPageState();
 }
 
-class _MyWorkOrdersPageState extends State<MyWorkOrdersPage> {
+class _WorkOrdersPageState extends State<WorkOrdersPage> {
   final ButtonClass buttonClass = ButtonClass();
 
   @override
@@ -50,7 +50,7 @@ class _MyWorkOrdersPageState extends State<MyWorkOrdersPage> {
                       const CustomizedAppBar(),
                       const BackToPrevScreen(),
                       const HeaderBar(
-                        text: 'My Work Orders',
+                        text: 'Work Orders',
                         isYellow: false,
                       ),
                       const SizedBox(height: 12),

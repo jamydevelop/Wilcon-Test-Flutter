@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/work_orders/presentation/create_new_workorders/create_new_workorders_page.dart';
-import 'package:wilcon_mobile/widgets/filter_dialog_widget.dart';
+import 'package:wilcon_mobile/module/work_orders/create_new_workorders/create_new_workorders_page.dart';
+
+import 'package:wilcon_mobile/widgets/filter_bottom_sheet_widget.dart';
 
 class ButtonClass {
   Widget createNewButton(BuildContext context) {
@@ -49,18 +50,22 @@ class ButtonClass {
       child: SizedBox(
         height: 44, // Set the height to 44 pixels
         child: ElevatedButton(
-          // onPressed: () {
-          //   // Action for button one
-          //   ScaffoldMessenger.of(context).showSnackBar(
-          //     const SnackBar(content: Text('Filter Pressed!')),
-          //   );
-
-          // },
           onPressed: () {
-            showDialog(
+            showModalBottomSheet<void>(
               context: context,
               builder: (BuildContext context) {
-                return const FilterDialog();
+                return const SizedBox(
+                  height: 521,
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        FilterBottomSheet(),
+                      ],
+                    ),
+                  ),
+                );
               },
             );
           },

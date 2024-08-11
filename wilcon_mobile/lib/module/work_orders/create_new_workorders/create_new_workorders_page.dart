@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/checklist/presentation/widget/four_buttons_example_widget.dart';
-import 'package:wilcon_mobile/module/work_orders/presentation/create_new_workorders/widget/create_new_workorders_body_widget.dart';
+import 'package:wilcon_mobile/module/work_orders/list_of_checklist/presentation/widget/four_buttons_example_widget.dart';
+import 'package:wilcon_mobile/module/work_orders/create_new_workorders/widget/create_new_workorders_body_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';

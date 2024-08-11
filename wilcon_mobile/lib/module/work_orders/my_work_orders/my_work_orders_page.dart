@@ -7,14 +7,14 @@ import 'package:wilcon_mobile/widgets/search_bar_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
 
-class WorkOrders extends StatefulWidget {
-  const WorkOrders({super.key});
+class MyWorkOrders extends StatefulWidget {
+  const MyWorkOrders({super.key});
 
   @override
-  State<WorkOrders> createState() => _WorkOrdersState();
+  State<MyWorkOrders> createState() => _MyWorkOrdersState();
 }
 
-class _WorkOrdersState extends State<WorkOrders> {
+class _MyWorkOrdersState extends State<MyWorkOrders> {
   final ButtonClass buttonClass = ButtonClass();
 
   @override
@@ -49,7 +49,7 @@ class _WorkOrdersState extends State<WorkOrders> {
                       const CustomizedAppBar(),
                       const BackToPrevScreen(),
                       const HeaderBar(
-                        text: 'Work Orders',
+                        text: 'My Work Orders',
                         isYellow: false,
                       ),
                       const SizedBox(height: 12),

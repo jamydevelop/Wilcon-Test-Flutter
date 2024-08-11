@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/module/work_orders/list_of_checklist/presentation/list_of_checklist_page.dart';
+import 'package:wilcon_mobile/widgets/search_bar_widget.dart';
 
 class CreateNewWorkordersBodyWidget extends StatefulWidget {
   const CreateNewWorkordersBodyWidget({super.key});
@@ -16,12 +18,10 @@ class _CreateNewWorkordersBodyWidgetState
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: 12.0), // 12px margin on left and right
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment:
-                CrossAxisAlignment.start, // Align children to the start (left)
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 12),
               _searchLocation(),
@@ -40,25 +40,160 @@ class _CreateNewWorkordersBodyWidgetState
               const SizedBox(height: 12),
               _readingDate(),
               const SizedBox(height: 12),
-              _breakdownCheckbox(), // Add the Checkbox widget here
+              _breakdownCheckbox(),
               _targetDateText("12/07/2023"),
               const SizedBox(height: 12),
               _subHeader("Equipment"),
               const SizedBox(height: 12),
-              _testWidget01(),
-              _testWidget02(),
-              _testWidget01(),
-              _testWidget02(),
-              _testWidget01(),
-              _testWidget02(),
-              _testWidget01(),
-              _testWidget02(),
-              _testWidget01(),
-              _testWidget02(),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 8),
+                child: const SearchBarWidget(hintText: 'Search Equipment'),
+              ),
+              const SizedBox(height: 12),
+              _searchDivider(),
+              const SizedBox(height: 12),
+              _subHeader("Checklist"),
+              const SizedBox(height: 12),
+              // Use Align to properly position the button
+              Align(
+                alignment: Alignment.center,
+                child: SizedBox(
+                  width: double.infinity, // Make button full width
+                  child: createNewButton(context),
+                ),
+              ),
+              const SizedBox(height: 12),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 8),
+                child: const SearchBarWidget(hintText: 'Checklist No.'),
+              ),
+              const SizedBox(height: 12),
+              _searchDivider(),
+              const SizedBox(height: 12),
+              saveTicketButton(context),
+              const SizedBox(height: 12),
+              cancelTicketButton(context),
+              const SizedBox(height: 12),
+              _searchDivider(),
+              const SizedBox(height: 12),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget cancelTicketButton(BuildContext context) {
+    return SizedBox(
+      height: 44, // Set the height to 44 pixels
+      child: OutlinedButton(
+        onPressed: () {
+          // Action for button
+          // Navigator.pushReplacement(
+          //   context,
+          //   MaterialPageRoute(
+          //       builder: (context) => const CreateNewWorkordersPage()),
+          // );
+        },
+        style: OutlinedButton.styleFrom(
+          foregroundColor: const Color(0xFF166E16),
+          side: const BorderSide(
+            color: Color(0xFF166E16), // Change outline color to #166E16
+            width: 1.0, // Outline width
+          ),
+          backgroundColor: Colors.white, // Change background color to white
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8), // Rounded corners
+          ),
+        ),
+        child: const Center(
+          child: Text(
+            'Cancel',
+            style: TextStyle(
+              fontSize: 16,
+              color: Color(0xFF166E16), // Change text color to #166E16
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget saveTicketButton(BuildContext context) {
+    return SizedBox(
+      height: 44, // Set the height to 44 pixels
+      child: ElevatedButton(
+        onPressed: () {
+          // Action for button
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const ListOfChecklistPage()),
+          );
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor:
+              const Color(0xFF166E16), // Change button color to #166E16
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8), // Rounded corners
+          ),
+        ),
+        child: const Center(
+          child: Text(
+            'Save Ticket',
+            style: TextStyle(
+              fontSize: 16,
+              color: Color(0xFFF4F7FA), // Change text color to #F4F7FA
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget createNewButton(BuildContext context) {
+    return SizedBox(
+      height: 44, // Set the height to 44 pixels
+      child: ElevatedButton(
+        onPressed: () {
+          // Action for button one
+          // Navigator.pushReplacement(
+          //   context,
+          //   MaterialPageRoute(
+          //       builder: (context) => const CreateNewWorkordersPage()),
+          // );
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xFFFACE17), // Change button color
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8), // Decrease rounded corners
+          ),
+        ),
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.add_circle, color: Color(0xFF15422B)), // Plus icon color
+            SizedBox(width: 8), // Optional spacing between icon and text
+            Text(
+              'Create New',
+              style: TextStyle(
+                fontSize: 16,
+                color: Color(0xFF15422B), // Text color
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _searchDivider() {
+    return const Divider(
+      height: 1, // Height of the divider
+      thickness: 1, // Thickness of the line
+      color: Colors.grey, // Color of the line
+      indent: 0, // Left margin
+      endIndent: 0, // Right margin
     );
   }
 
@@ -83,36 +218,9 @@ class _CreateNewWorkordersBodyWidgetState
     );
   }
 
-  Widget _testWidget01() {
-    return Container(
-      color: Colors.amberAccent,
-      width: double.infinity, // Expand to full width available
-      child: const Text(
-        "data",
-        style: TextStyle(
-          fontSize: 16, // Adjust text size if needed
-        ),
-        textAlign: TextAlign.center, // Center text within the container
-      ),
-    );
-  }
-
-  Widget _testWidget02() {
-    return const Align(
-      alignment: Alignment.centerRight,
-      child: Text(
-        'This is a sample data',
-        textAlign: TextAlign.left,
-        style: TextStyle(
-            // Optionally, adjust text style here if needed
-            ),
-      ),
-    );
-  }
-
   Widget _searchLocation() {
     return Padding(
-      padding: const EdgeInsets.all(0.0), // Padding of 12 pixels on all sides
+      padding: const EdgeInsets.all(0.0),
       child: TextField(
         decoration: InputDecoration(
           hintText: "Location",
@@ -122,24 +230,24 @@ class _CreateNewWorkordersBodyWidgetState
           ),
           border: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Colors.grey, // Border color
-              width: 1.0, // Border width
+              color: Colors.grey,
+              width: 1.0,
             ),
-            borderRadius: BorderRadius.circular(4.0), // Updated border radius
+            borderRadius: BorderRadius.circular(4.0),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Colors.blue, // Color when focused
-              width: 1.0, // Border width when focused
+              color: Colors.blue,
+              width: 1.0,
             ),
-            borderRadius: BorderRadius.circular(4.0), // Updated border radius
+            borderRadius: BorderRadius.circular(4.0),
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Colors.grey, // Color when enabled
-              width: 1.0, // Border width when enabled
+              color: Colors.grey,
+              width: 1.0,
             ),
-            borderRadius: BorderRadius.circular(4.0), // Updated border radius
+            borderRadius: BorderRadius.circular(4.0),
           ),
           suffixIcon: const Icon(
             Icons.search,
@@ -159,24 +267,23 @@ class _CreateNewWorkordersBodyWidgetState
       itemHeight: 55,
       hint: const Text('Type'),
       decoration: const InputDecoration(
-        contentPadding:
-            EdgeInsets.symmetric(horizontal: 12.0), // Adjust padding if needed
+        contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
         border: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
       ),
@@ -201,24 +308,23 @@ class _CreateNewWorkordersBodyWidgetState
       itemHeight: 55,
       hint: const Text('Category'),
       decoration: const InputDecoration(
-        contentPadding:
-            EdgeInsets.symmetric(horizontal: 12.0), // Adjust padding if needed
+        contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
         border: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
       ),
@@ -239,24 +345,23 @@ class _CreateNewWorkordersBodyWidgetState
       itemHeight: 55,
       hint: const Text('Sub-Category'),
       decoration: const InputDecoration(
-        contentPadding:
-            EdgeInsets.symmetric(horizontal: 12.0), // Adjust padding if needed
+        contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
         border: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
       ),
@@ -277,7 +382,7 @@ class _CreateNewWorkordersBodyWidgetState
 
   Widget _issueDescription() {
     return Padding(
-      padding: const EdgeInsets.all(0.0), // Padding of 12 pixels on all sides
+      padding: const EdgeInsets.all(0.0),
       child: TextField(
         decoration: InputDecoration(
           hintText: "Issue/Description",
@@ -287,24 +392,24 @@ class _CreateNewWorkordersBodyWidgetState
           ),
           border: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Colors.grey, // Border color
-              width: 1.0, // Border width
+              color: Colors.grey,
+              width: 1.0,
             ),
-            borderRadius: BorderRadius.circular(4.0), // Updated border radius
+            borderRadius: BorderRadius.circular(4.0),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Colors.blue, // Color when focused
-              width: 1.0, // Border width when focused
+              color: Colors.blue,
+              width: 1.0,
             ),
-            borderRadius: BorderRadius.circular(4.0), // Updated border radius
+            borderRadius: BorderRadius.circular(4.0),
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Colors.grey, // Color when enabled
-              width: 1.0, // Border width when enabled
+              color: Colors.grey,
+              width: 1.0,
             ),
-            borderRadius: BorderRadius.circular(4.0), // Updated border radius
+            borderRadius: BorderRadius.circular(4.0),
           ),
           suffixIcon: const Icon(
             Icons.search,
@@ -324,24 +429,23 @@ class _CreateNewWorkordersBodyWidgetState
       itemHeight: 55,
       hint: const Text('Priority Level'),
       decoration: const InputDecoration(
-        contentPadding:
-            EdgeInsets.symmetric(horizontal: 12.0), // Adjust padding if needed
+        contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
         border: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
       ),
@@ -366,24 +470,23 @@ class _CreateNewWorkordersBodyWidgetState
       itemHeight: 55,
       hint: const Text('Service Provider'),
       decoration: const InputDecoration(
-        contentPadding:
-            EdgeInsets.symmetric(horizontal: 12.0), // Adjust padding if needed
+        contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
         border: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 168, 181, 194), // Border color
-            width: 1.0, // Border width
+            color: Color.fromARGB(255, 168, 181, 194),
+            width: 1.0,
           ),
         ),
       ),
@@ -426,12 +529,11 @@ class _CreateNewWorkordersBodyWidgetState
     return Text(
       'Target date: $targetDate',
       style: const TextStyle(
-        fontSize: 12, // font-size in pixels
-        fontStyle: FontStyle.normal, // font-style: normal
-        fontWeight: FontWeight.w600, // font-weight: 600
-        height:
-            20 / 12, // line-height relative to font-size, height: 20px / 12px
-        letterSpacing: 0.048, // letter-spacing in pixels
+        fontSize: 12,
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w600,
+        height: 20 / 12,
+        letterSpacing: 0.048,
       ),
     );
   }
@@ -440,7 +542,6 @@ class _CreateNewWorkordersBodyWidgetState
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        // Border layer
         Positioned.fill(
           child: Container(
             decoration: const BoxDecoration(
@@ -457,7 +558,6 @@ class _CreateNewWorkordersBodyWidgetState
             ),
           ),
         ),
-        // Main content
         Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 12.0),
@@ -471,7 +571,7 @@ class _CreateNewWorkordersBodyWidgetState
             ),
           ),
           child: Text(
-            myTitle, // Use the parameter directly
+            myTitle,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 14,

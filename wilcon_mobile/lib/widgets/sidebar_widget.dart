@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/checklist/presentation/checklist_page.dart';
+import 'package:wilcon_mobile/module/work_orders/list_of_checklist/presentation/list_of_checklist_page.dart';
 import 'package:wilcon_mobile/module/homepage/presentation/home_page.dart';
 import 'package:wilcon_mobile/module/meter_readings/presentation/meterreadings_page.dart';
 import 'package:wilcon_mobile/module/notifications/presentation/notifications_page.dart';
-import 'package:wilcon_mobile/module/work_orders/presentation/my_workorders/my_workorders_page.dart'; // Import your pages
+import 'package:wilcon_mobile/module/work_orders/work_orders/workorders_page.dart'; // Import your pages
 
 class CustomSidebar extends StatelessWidget {
   const CustomSidebar({super.key});
@@ -60,7 +60,7 @@ class CustomSidebar extends StatelessWidget {
                     () => Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ChecklistPage()),
+                          builder: (context) => const ListOfChecklistPage()),
                     ),
                   ),
                   _buildListTile(
@@ -71,7 +71,7 @@ class CustomSidebar extends StatelessWidget {
                     () => Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MyWorkOrdersPage()),
+                          builder: (context) => const WorkOrdersPage()),
                     ),
                   ),
                   _buildListTile(
