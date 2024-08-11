@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/work_orders/checklist_detail/checklist_detail_page.dart';
 import 'package:wilcon_mobile/module/work_orders/list_of_checklist/presentation/widget/checklist_items_data.dart';
 import 'package:wilcon_mobile/module/work_orders/list_of_checklist/presentation/widget/four_buttons_example_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
@@ -76,40 +75,7 @@ class _ListOfChecklistPageState extends State<ListOfChecklistPage> {
                   child:
                       ChecklistItems(), // Using a separate widget for the list
                 ),
-                saveTicketButton(context),
               ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget saveTicketButton(BuildContext context) {
-    return SizedBox(
-      height: 44, // Set the height to 44 pixels
-      child: ElevatedButton(
-        onPressed: () {
-          // Action for button
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const ChecklistDetailPage()),
-          );
-        },
-        style: ElevatedButton.styleFrom(
-          backgroundColor:
-              const Color(0xFF166E16), // Change button color to #166E16
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.zero, // Rounded corners
-          ),
-        ),
-        child: const Center(
-          child: Text(
-            'Next',
-            style: TextStyle(
-              fontSize: 16,
-              color: Color(0xFFF4F7FA), // Change text color to #F4F7FA
             ),
           ),
         ),

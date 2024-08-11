@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/module/work_orders/checklist_detail/checklist_detail_page.dart';
 
 class ChecklistItems extends StatelessWidget {
   const ChecklistItems({super.key});
@@ -27,9 +28,11 @@ class ChecklistItems extends StatelessWidget {
 
         return GestureDetector(
           onTap: () {
-            // Handle item tap
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Clicked on: $text')),
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ChecklistDetailPage(),
+              ),
             );
           },
           child: Container(
