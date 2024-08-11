@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/module/work_orders/create_new_workorders/widget/saved_modal_widget.dart';
 import 'package:wilcon_mobile/module/work_orders/list_of_checklist/presentation/list_of_checklist_page.dart';
 import 'package:wilcon_mobile/widgets/search_bar_widget.dart';
 
@@ -130,6 +131,7 @@ class _CreateNewWorkordersBodyWidgetState
             MaterialPageRoute(
                 builder: (context) => const ListOfChecklistPage()),
           );
+          const SavedModalWidget();
         },
         style: ElevatedButton.styleFrom(
           backgroundColor:

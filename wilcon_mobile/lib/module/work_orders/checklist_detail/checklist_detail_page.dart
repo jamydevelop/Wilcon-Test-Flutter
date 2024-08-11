@@ -47,7 +47,7 @@ class _ChecklistDetailPageState extends State<ChecklistDetailPage> {
                       CustomizedAppBar(),
                       BackToPrevScreen(),
                       HeaderBar(
-                        text: 'Create Checklist',
+                        text: 'Maintenance Daily Checklist',
                         isYellow: true,
                       ),
                       SizedBox(height: 12),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/module/work_orders/create_new_workorders/create_new_workorders_page.dart';
 
 class ChecklistDetailBodyPage extends StatefulWidget {
   const ChecklistDetailBodyPage({super.key});
@@ -50,11 +51,11 @@ class _ChecklistDetailBodyPageState extends State<ChecklistDetailBodyPage> {
       child: ElevatedButton(
         onPressed: () {
           // Action for button
-          // Navigator.pushReplacement(
-          //   context,
-          //   MaterialPageRoute(
-          //       builder: (context) => const ListOfChecklistPage()),
-          // );
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const CreateNewWorkordersPage()),
+          );
         },
         style: ElevatedButton.styleFrom(
           backgroundColor:
