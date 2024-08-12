@@ -125,13 +125,33 @@ class _CreateNewWorkordersBodyWidgetState
       height: 44, // Set the height to 44 pixels
       child: ElevatedButton(
         onPressed: () {
-          // Action for button
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const ListOfChecklistPage()),
-          );
-          const SavedModalWidget();
+          // Show the modal bottom sheet
+          showModalBottomSheet<void>(
+            context: context,
+            isScrollControlled:
+                true, // Allows the bottom sheet to be scrollable if necessary
+            builder: (BuildContext context) {
+              return const SizedBox(
+                height: 521,
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      SavedModalWidget(),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ).whenComplete(() {
+            // Navigate to the next page after the modal is closed
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const ListOfChecklistPage()),
+            );
+          });
         },
         style: ElevatedButton.styleFrom(
           backgroundColor:

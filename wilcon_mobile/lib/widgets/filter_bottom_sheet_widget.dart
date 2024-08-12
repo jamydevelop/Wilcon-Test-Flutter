@@ -6,8 +6,16 @@ class FilterBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.transparent, // Make the Material background transparent
       child: Container(
         padding: const EdgeInsets.all(16),
+        decoration: const BoxDecoration(
+          color:
+              Colors.transparent, // Background color of the content container
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(16), // Rounded corners for the bottom sheet
+          ),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize
@@ -149,6 +157,8 @@ void showFilterBottomSheet(BuildContext context) {
     context: context,
     isScrollControlled:
         true, // Allows the bottom sheet to be scrollable if necessary
+    backgroundColor:
+        Colors.transparent, // Make the bottom sheet background transparent
     builder: (BuildContext context) {
       return const FilterBottomSheet();
     },
