@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/meter_readings/meter_body_widget.dart';
+import 'package:wilcon_mobile/module/meter_readings/widgets/meter_body_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/widgets/buttons_widget.dart';
@@ -58,12 +58,46 @@ class _MeterReadingsPageState extends State<MeterReadingsPage> {
                   ),
                 ),
                 Expanded(
-                  child: Center(
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(
-                          horizontal:
-                              12.0), // Add 12px margin on left and right
-                      child: const MeterBodyWidget(), // body: ,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(
+                            left: 12.0,
+                            right: 12.0,
+                            top: 12.0,
+                            bottom: 0.0, // Remove vertical margin at the bottom
+                          ),
+                          child: const MeterBodyWidget(),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(
+                            left: 12.0,
+                            right: 12.0,
+                            top: 12.0,
+                            bottom: 0.0, // Remove vertical margin at the bottom
+                          ),
+                          child: const MeterBodyWidget(),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(
+                            left: 12.0,
+                            right: 12.0,
+                            top: 12.0,
+                            bottom: 0.0, // Remove vertical margin at the bottom
+                          ),
+                          child: const MeterBodyWidget(),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(
+                            left: 12.0,
+                            right: 12.0,
+                            top: 12.0,
+                            bottom: 0.0, // Remove vertical margin at the bottom
+                          ),
+                          child: const MeterBodyWidget(),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -74,8 +108,4 @@ class _MeterReadingsPageState extends State<MeterReadingsPage> {
       ),
     );
   }
-
-  // Widget _meterReadingsPageBody() {
-  //   return const Text('This is Meter Readings Page! :)');
-  // }
 }

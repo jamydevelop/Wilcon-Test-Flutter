@@ -25,8 +25,10 @@ class _MeterBodyWidgetState extends State<MeterBodyWidget> {
               ),
               trailing: IconButton(
                 icon: Icon(
-                  _isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down,
-                  color: Colors.white, // Icon color
+                  _isExpanded
+                      ? Icons.keyboard_arrow_up_sharp
+                      : Icons.keyboard_arrow_down,
+                  color: const Color(0xFFDCB40D), // Arrow icon color
                 ),
                 onPressed: () {
                   setState(() {
@@ -40,7 +42,15 @@ class _MeterBodyWidgetState extends State<MeterBodyWidget> {
             duration: const Duration(milliseconds: 300),
             firstChild: Container(),
             secondChild: Column(
-              children: _buildRows(),
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                _buildRow('Tenant', 'Henry Quimbao', Colors.white),
+                _buildRow('Last Reading', '232 cUm', Colors.grey[200]!),
+                Container(
+                  color: Colors.white,
+                  child: _buildButton(),
+                ),
+              ],
             ),
             crossFadeState: _isExpanded
                 ? CrossFadeState.showSecond
@@ -49,27 +59,6 @@ class _MeterBodyWidgetState extends State<MeterBodyWidget> {
         ],
       ),
     );
-  }
-
-  List<Widget> _buildRows() {
-    // Example data for rows
-    final List<Map<String, String>> rowsData = List.generate(
-      5,
-      (index) => {'label1': 'Tenant $index', 'label2': 'Henry Quimbao $index'},
-    );
-
-    return rowsData.asMap().entries.map((entry) {
-      int index = entry.key;
-      Map<String, String> rowData = entry.value;
-      // Alternate colors based on the index
-      Color rowColor = index % 2 == 0 ? Colors.white : Colors.grey[200]!;
-
-      return _buildRow(rowData['label1']!, rowData['label2']!, rowColor);
-    }).toList()
-      ..add(
-        _buildButton(
-            rowsData.length % 2 == 0 ? Colors.white : Colors.grey[200]!),
-      );
   }
 
   Widget _buildRow(String label1, String label2, Color backgroundColor) {
@@ -94,25 +83,31 @@ class _MeterBodyWidgetState extends State<MeterBodyWidget> {
     );
   }
 
-  Widget _buildButton(Color backgroundColor) {
-    return ElevatedButton.icon(
-      onPressed: () {
-        // Handle button press
-      },
-      icon: const Icon(Icons.arrow_forward),
-      label: const Text('View Details'),
-      style: ElevatedButton.styleFrom(
-        foregroundColor: Colors.black,
-        backgroundColor: Colors.white, // Set background color to white
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4.0), // Set border radius to 4px
-          side: BorderSide(
-            color: Color(0xFF166E16), // Border color set to #166E16
-            width: 2.0, // Border width
+  Widget _buildButton() {
+    return Container(
+      color: Colors.white, // Background color of the button container
+      margin: const EdgeInsets.all(12.0), // Margin of 12px on all sides
+      child: ElevatedButton.icon(
+        onPressed: () {
+          // Handle button press
+        },
+        icon:
+            const Icon(Icons.arrow_forward, color: Colors.black), // Icon color
+        label: const Text('View Details'),
+        style: ElevatedButton.styleFrom(
+          foregroundColor: Colors.black, // Text color
+          backgroundColor: Colors.white, // Button background color
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4.0), // Border radius
+            side: const BorderSide(
+              color: Color(0xFF166E16), // Border color
+              width: 2.0, // Border width
+            ),
           ),
+          padding: const EdgeInsets.symmetric(
+              vertical: 12.0, horizontal: 16.0), // Padding inside the button
+          elevation: 0, // Ensure no elevation
         ),
-        padding: EdgeInsets.symmetric(
-            vertical: 12.0, horizontal: 16.0), // Optional padding
       ),
     );
   }
