@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class MeterCardDetails extends StatefulWidget {
+class CardContainerWidget extends StatefulWidget {
   final String header;
   final Widget child;
 
-  const MeterCardDetails({
+  const CardContainerWidget({
     super.key,
     required this.header,
     required this.child,
   });
 
   @override
-  State<MeterCardDetails> createState() => _MeterCardDetailsState();
+  State<CardContainerWidget> createState() => _CardContainerWidgetState();
 }
 
-class _MeterCardDetailsState extends State<MeterCardDetails> {
+class _CardContainerWidgetState extends State<CardContainerWidget> {
   // Initialize _isExpanded to true to make the card open by default
   bool _isExpanded = true;
 

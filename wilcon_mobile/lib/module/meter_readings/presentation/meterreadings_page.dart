@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/meter_readings/widgets/example_usage_widget.dart';
+import 'package:wilcon_mobile/module/meter_readings/widgets/meter_more_details_widget.dart';
 
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
@@ -62,7 +62,7 @@ class _MeterReadingsPageState extends State<MeterReadingsPage> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        ExampleUsage(),
+                        MeterMoreDetailsWidget(),
                         // Container(
                         //   margin: const EdgeInsets.only(
                         //     left: 12.0,

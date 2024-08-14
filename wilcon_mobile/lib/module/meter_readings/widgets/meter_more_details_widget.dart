@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/meter_readings/widgets/meter_card_details_widget.dart';
+import 'package:wilcon_mobile/module/meter_readings/widgets/card_container_widget.dart';
 // Import the MeterCardDetails class
 
-class ExampleUsage extends StatelessWidget {
-  const ExampleUsage({super.key});
+class MeterMoreDetailsWidget extends StatelessWidget {
+  const MeterMoreDetailsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: MeterCardDetails(
+      child: CardContainerWidget(
         header: 'Meter #24335',
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -17,6 +17,9 @@ class ExampleUsage extends StatelessWidget {
             _buildRow('Tenant', const Text('Henry Quimbao'), Colors.white),
             _buildRow('Last Reading', const Text('232 cUm'), Colors.grey[200]!),
             _buildRow('Reading Date', _buildDatePicker(context), Colors.white),
+            Divider(height: 2.0, color: Colors.grey[200]!),
+            _buildRow('New Reading', _buildNewReadingTextField(), Colors.white),
+            _buildRow('Billing', const Text('232 cUm'), Colors.grey[200]!),
             Container(
               color: Colors.white,
               margin: const EdgeInsets.all(12.0),
@@ -70,11 +73,31 @@ class ExampleUsage extends StatelessWidget {
     );
   }
 
+  Widget _buildNewReadingTextField() {
+    return const TextField(
+      decoration: InputDecoration(
+        // labelText: 'New Reading',
+        hintText: 'Input here new reading',
+        border: OutlineInputBorder(), // Adds a border around the TextField
+        focusedBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: Colors.blue, width: 2.0), // Border when focused
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+              color: Colors.grey, width: 1.0), // Border when not focused
+        ),
+        contentPadding: EdgeInsets.symmetric(
+            horizontal: 16.0, vertical: 12.0), // Adjust padding as needed
+      ),
+    );
+  }
+
   Widget _buildDatePicker(BuildContext context) {
-    TextEditingController _dateController = TextEditingController();
+    TextEditingController dateController = TextEditingController();
 
     return TextField(
-      controller: _dateController,
+      controller: dateController,
       readOnly: true, // Makes the TextField non-editable
       decoration: InputDecoration(
         labelText: 'Date',
@@ -89,7 +112,7 @@ class ExampleUsage extends StatelessWidget {
             );
             if (selectedDate != null) {
               // Format the date and set it to the TextField
-              _dateController.text =
+              dateController.text =
                   "${selectedDate.toLocal()}".split(' ')[0]; // Format as needed
             }
           },
