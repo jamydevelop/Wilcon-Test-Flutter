@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/module/meter_readings/widgets/meter_card_body_widget.dart';
 import 'package:wilcon_mobile/module/meter_readings/widgets/meter_more_details_widget.dart';
 
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
@@ -22,7 +23,7 @@ class _MeterReadingsPageState extends State<MeterReadingsPage> {
     return Scaffold(
       body: SafeArea(
         child: Scaffold(
-          endDrawer: const CustomSidebar(),
+          endDrawer: const CustomSidebar(), // Removed const
           body: Padding(
             padding: const EdgeInsets.symmetric(
                 horizontal: 0.0), // Remove left and right padding
@@ -46,8 +47,8 @@ class _MeterReadingsPageState extends State<MeterReadingsPage> {
                       12.0), // Padding inside the container
                   child: Column(
                     children: [
-                      const CustomizedAppBar(),
-                      const BackToPrevScreen(),
+                      const CustomizedAppBar(), // Removed const
+                      const BackToPrevScreen(), // Removed const
                       const HeaderBar(
                         text: 'Meter Readings',
                         isYellow: false,
@@ -58,47 +59,20 @@ class _MeterReadingsPageState extends State<MeterReadingsPage> {
                     ],
                   ),
                 ),
-                const Expanded(
+                Expanded(
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        MeterMoreDetailsWidget(),
-                        // Container(
-                        //   margin: const EdgeInsets.only(
-                        //     left: 12.0,
-                        //     right: 12.0,
-                        //     top: 12.0,
-                        //     bottom: 0.0, // Remove vertical margin at the bottom
-                        //   ),
-                        //   child: const MeterCardBodyWidget(),
-                        // ),
-                        // Container(
-                        //   margin: const EdgeInsets.only(
-                        //     left: 12.0,
-                        //     right: 12.0,
-                        //     top: 12.0,
-                        //     bottom: 0.0, // Remove vertical margin at the bottom
-                        //   ),
-                        //   child: const MeterCardBodyWidget(),
-                        // ),
-                        // Container(
-                        //   margin: const EdgeInsets.only(
-                        //     left: 12.0,
-                        //     right: 12.0,
-                        //     top: 12.0,
-                        //     bottom: 0.0, // Remove vertical margin at the bottom
-                        //   ),
-                        //   child: const MeterCardBodyWidget(),
-                        // ),
-                        // Container(
-                        //   margin: const EdgeInsets.only(
-                        //     left: 12.0,
-                        //     right: 12.0,
-                        //     top: 12.0,
-                        //     bottom: 0.0, // Remove vertical margin at the bottom
-                        //   ),
-                        //   child: const MeterCardBodyWidget(),
-                        // ),
+                        const MeterMoreDetailsWidget(),
+                        Container(
+                          margin: const EdgeInsets.only(
+                            left: 12.0,
+                            right: 12.0,
+                            top: 12.0,
+                            bottom: 0.0, // Remove vertical margin at the bottom
+                          ),
+                          child: const MeterCardBodyWidget(),
+                        ),
                       ],
                     ),
                   ),
