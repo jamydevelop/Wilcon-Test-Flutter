@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/meter_readings/widgets/card_container_widget.dart';
+import 'package:wilcon_mobile/module/meter_readings/widgets/meter_card_container_widget.dart';
 // Import the MeterCardDetails class
 
 class MeterMoreDetailsWidget extends StatelessWidget {
@@ -9,7 +9,7 @@ class MeterMoreDetailsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: CardContainerWidget(
+      child: MeterCardContainerWidget(
         header: 'Meter #24335',
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -20,6 +20,12 @@ class MeterMoreDetailsWidget extends StatelessWidget {
             Divider(height: 2.0, color: Colors.grey[200]!),
             _buildRow('New Reading', _buildNewReadingTextField(), Colors.white),
             _buildRow('Billing', const Text('232 cUm'), Colors.grey[200]!),
+            _buildRow('File/Photo', _imgSample(), Colors.white),
+            _buildRow(
+                'Notes',
+                const Text(
+                    'This place only placeholder. 3 or more sentences only. Input here.'),
+                Colors.grey[200]!),
             Container(
               color: Colors.white,
               margin: const EdgeInsets.all(12.0),
@@ -47,6 +53,18 @@ class MeterMoreDetailsWidget extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _imgSample() {
+    return const SizedBox(
+      width: 52.0,
+      height: 52.0,
+      child: Image(
+        //image: AssetImage('assets/images/samplePic1.png'),
+        image: AssetImage('assets/images/WilconLogoSmall1.png'),
+        fit: BoxFit.cover, // Ensure the image covers the box
       ),
     );
   }

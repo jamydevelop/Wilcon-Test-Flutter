@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
-class CardContainerWidget extends StatefulWidget {
+class MeterCardContainerWidget extends StatefulWidget {
   final String header;
   final Widget child;
 
-  const CardContainerWidget({
+  const MeterCardContainerWidget({
     super.key,
     required this.header,
     required this.child,
   });
 
   @override
-  State<CardContainerWidget> createState() => _CardContainerWidgetState();
+  State<MeterCardContainerWidget> createState() =>
+      _MeterCardContainerWidgetState();
 }
 
-class _CardContainerWidgetState extends State<CardContainerWidget> {
+class _MeterCardContainerWidgetState extends State<MeterCardContainerWidget> {
   // Initialize _isExpanded to true to make the card open by default
   bool _isExpanded = true;
 
@@ -22,6 +23,10 @@ class _CardContainerWidgetState extends State<CardContainerWidget> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4.0,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+            top: Radius.circular(8.0)), // Rounded only at the top
+      ),
       child: Column(
         children: <Widget>[
           Container(
