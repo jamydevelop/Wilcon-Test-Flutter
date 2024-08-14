@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/meter_readings/widgets/meter_body_widget.dart';
+import 'package:wilcon_mobile/module/meter_readings/widgets/example_usage_widget.dart';
+
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/widgets/buttons_widget.dart';
@@ -57,46 +58,47 @@ class _MeterReadingsPageState extends State<MeterReadingsPage> {
                     ],
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        Container(
-                          margin: const EdgeInsets.only(
-                            left: 12.0,
-                            right: 12.0,
-                            top: 12.0,
-                            bottom: 0.0, // Remove vertical margin at the bottom
-                          ),
-                          child: const MeterBodyWidget(),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(
-                            left: 12.0,
-                            right: 12.0,
-                            top: 12.0,
-                            bottom: 0.0, // Remove vertical margin at the bottom
-                          ),
-                          child: const MeterBodyWidget(),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(
-                            left: 12.0,
-                            right: 12.0,
-                            top: 12.0,
-                            bottom: 0.0, // Remove vertical margin at the bottom
-                          ),
-                          child: const MeterBodyWidget(),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(
-                            left: 12.0,
-                            right: 12.0,
-                            top: 12.0,
-                            bottom: 0.0, // Remove vertical margin at the bottom
-                          ),
-                          child: const MeterBodyWidget(),
-                        ),
+                        ExampleUsage(),
+                        // Container(
+                        //   margin: const EdgeInsets.only(
+                        //     left: 12.0,
+                        //     right: 12.0,
+                        //     top: 12.0,
+                        //     bottom: 0.0, // Remove vertical margin at the bottom
+                        //   ),
+                        //   child: const MeterCardBodyWidget(),
+                        // ),
+                        // Container(
+                        //   margin: const EdgeInsets.only(
+                        //     left: 12.0,
+                        //     right: 12.0,
+                        //     top: 12.0,
+                        //     bottom: 0.0, // Remove vertical margin at the bottom
+                        //   ),
+                        //   child: const MeterCardBodyWidget(),
+                        // ),
+                        // Container(
+                        //   margin: const EdgeInsets.only(
+                        //     left: 12.0,
+                        //     right: 12.0,
+                        //     top: 12.0,
+                        //     bottom: 0.0, // Remove vertical margin at the bottom
+                        //   ),
+                        //   child: const MeterCardBodyWidget(),
+                        // ),
+                        // Container(
+                        //   margin: const EdgeInsets.only(
+                        //     left: 12.0,
+                        //     right: 12.0,
+                        //     top: 12.0,
+                        //     bottom: 0.0, // Remove vertical margin at the bottom
+                        //   ),
+                        //   child: const MeterCardBodyWidget(),
+                        // ),
                       ],
                     ),
                   ),

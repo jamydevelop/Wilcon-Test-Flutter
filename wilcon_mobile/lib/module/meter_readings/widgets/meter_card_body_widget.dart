@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class MeterBodyWidget extends StatefulWidget {
-  const MeterBodyWidget({super.key});
+class MeterCardBodyWidget extends StatefulWidget {
+  const MeterCardBodyWidget({super.key});
 
   @override
-  State<MeterBodyWidget> createState() => _MeterBodyWidgetState();
+  State<MeterCardBodyWidget> createState() => _MeterCardBodyWidgetState();
 }
 
-class _MeterBodyWidgetState extends State<MeterBodyWidget> {
-  bool _isExpanded = false;
+class _MeterCardBodyWidgetState extends State<MeterCardBodyWidget> {
+  // Initialize _isExpanded to true to make the card open by default
+  bool _isExpanded = true;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class _MeterBodyWidgetState extends State<MeterBodyWidget> {
           ),
           AnimatedCrossFade(
             duration: const Duration(milliseconds: 300),
-            firstChild: Container(),
+            firstChild: Container(), // Content hidden by default
             secondChild: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
