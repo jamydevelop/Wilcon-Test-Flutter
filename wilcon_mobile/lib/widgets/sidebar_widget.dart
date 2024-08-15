@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/module/work_orders/list_of_checklist/presentation/list_of_checklist_page.dart';
 import 'package:wilcon_mobile/module/homepage/presentation/home_page.dart';
-import 'package:wilcon_mobile/module/meter_readings/presentation/meterreadings_page.dart';
+import 'package:wilcon_mobile/module/meter_readings/presentation/meter_readings_main_page.dart';
 import 'package:wilcon_mobile/module/notifications/presentation/notifications_page.dart';
 import 'package:wilcon_mobile/module/work_orders/work_orders/workorders_page.dart'; // Import your pages
 

@@ -16,33 +16,36 @@ class MeterCardContainerWidget extends StatefulWidget {
 }
 
 class _MeterCardContainerWidgetState extends State<MeterCardContainerWidget> {
-  // Initialize _isExpanded to true to make the card open by default
   bool _isExpanded = true;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4.0,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-            top: Radius.circular(8.0)), // Rounded only at the top
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4.0),
       ),
       child: Column(
         children: <Widget>[
           Container(
-            color: const Color(0xFF15422B), // Header background color
+            decoration: const BoxDecoration(
+              color: Color(0xFF15422B),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(4.0),
+                topRight: Radius.circular(4.0),
+              ),
+            ),
             child: ListTile(
               title: Text(
                 widget.header,
-                style:
-                    const TextStyle(color: Colors.white), // Header text color
+                style: const TextStyle(color: Colors.white),
               ),
               trailing: IconButton(
                 icon: Icon(
                   _isExpanded
                       ? Icons.keyboard_arrow_up_sharp
                       : Icons.keyboard_arrow_down,
-                  color: const Color(0xFFDCB40D), // Arrow icon color
+                  color: const Color(0xFFDCB40D),
                 ),
                 onPressed: () {
                   setState(() {
@@ -54,7 +57,7 @@ class _MeterCardContainerWidgetState extends State<MeterCardContainerWidget> {
           ),
           AnimatedCrossFade(
             duration: const Duration(milliseconds: 300),
-            firstChild: Container(), // Content hidden by default
+            firstChild: Container(),
             secondChild: widget.child,
             crossFadeState: _isExpanded
                 ? CrossFadeState.showSecond

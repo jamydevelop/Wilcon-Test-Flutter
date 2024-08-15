@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/meter_readings/widgets/meter_card_container_widget.dart';
-// Import the MeterCardDetails class
+import 'meter_card_container_widget.dart'; // Adjust import path if needed
 
 class MeterMoreDetailsWidget extends StatelessWidget {
   const MeterMoreDetailsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
+    return SizedBox(
+      width: double.infinity,
       child: MeterCardContainerWidget(
         header: 'Meter #24335',
         child: Column(
@@ -22,35 +21,13 @@ class MeterMoreDetailsWidget extends StatelessWidget {
             _buildRow('Billing', const Text('232 cUm'), Colors.grey[200]!),
             _buildRow('File/Photo', _imgSample(), Colors.white),
             _buildRow(
-                'Notes',
-                const Text(
-                    'This place only placeholder. 3 or more sentences only. Input here.'),
-                Colors.grey[200]!),
-            Container(
-              color: Colors.white,
-              margin: const EdgeInsets.all(12.0),
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  // Handle button press
-                },
-                icon: const Icon(Icons.arrow_forward, color: Color(0xFF166E16)),
-                label: const Text('View Details'),
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: const Color(0xFF166E16),
-                  backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4.0),
-                    side: const BorderSide(
-                      color: Color(0xFF166E16),
-                      width: 2.0,
-                    ),
-                  ),
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 12.0, horizontal: 16.0),
-                  elevation: 0,
-                ),
+              'Notes',
+              const Text(
+                'This place only placeholder. 3 or more sentences only. Input here.',
               ),
+              Colors.grey[200]!,
             ),
+            _saveButton(),
           ],
         ),
       ),
@@ -62,9 +39,8 @@ class MeterMoreDetailsWidget extends StatelessWidget {
       width: 52.0,
       height: 52.0,
       child: Image(
-        //image: AssetImage('assets/images/samplePic1.png'),
         image: AssetImage('assets/images/WilconLogoSmall1.png'),
-        fit: BoxFit.cover, // Ensure the image covers the box
+        fit: BoxFit.cover,
       ),
     );
   }
@@ -91,22 +67,46 @@ class MeterMoreDetailsWidget extends StatelessWidget {
     );
   }
 
+  Widget _saveButton() {
+    return Container(
+      margin: const EdgeInsets.all(12.0), // Margin around the button
+      color: Colors.white, // Set the container color to white
+      child: SizedBox(
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {
+            // Handle button press
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF166E16), // Button background color
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4.0),
+            ),
+            padding:
+                const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+            elevation: 0,
+          ),
+          child: const Text(
+            'Save',
+            style: TextStyle(color: Colors.white), // Button text color
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _buildNewReadingTextField() {
     return const TextField(
       decoration: InputDecoration(
-        // labelText: 'New Reading',
         hintText: 'Input here new reading',
-        border: OutlineInputBorder(), // Adds a border around the TextField
+        border: OutlineInputBorder(),
         focusedBorder: OutlineInputBorder(
-          borderSide:
-              BorderSide(color: Colors.blue, width: 2.0), // Border when focused
+          borderSide: BorderSide(color: Colors.blue, width: 2.0),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-              color: Colors.grey, width: 1.0), // Border when not focused
+          borderSide: BorderSide(color: Colors.grey, width: 1.0),
         ),
-        contentPadding: EdgeInsets.symmetric(
-            horizontal: 16.0, vertical: 12.0), // Adjust padding as needed
+        contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
       ),
     );
   }
@@ -116,7 +116,7 @@ class MeterMoreDetailsWidget extends StatelessWidget {
 
     return TextField(
       controller: dateController,
-      readOnly: true, // Makes the TextField non-editable
+      readOnly: true,
       decoration: InputDecoration(
         labelText: 'Date',
         suffixIcon: IconButton(
@@ -129,24 +129,19 @@ class MeterMoreDetailsWidget extends StatelessWidget {
               lastDate: DateTime(2101),
             );
             if (selectedDate != null) {
-              // Format the date and set it to the TextField
-              dateController.text =
-                  "${selectedDate.toLocal()}".split(' ')[0]; // Format as needed
+              dateController.text = "${selectedDate.toLocal()}".split(' ')[0];
             }
           },
         ),
-        border:
-            const OutlineInputBorder(), // Adds a border around the TextField
+        border: const OutlineInputBorder(),
         focusedBorder: const OutlineInputBorder(
-          borderSide:
-              BorderSide(color: Colors.blue, width: 2.0), // Border when focused
+          borderSide: BorderSide(color: Colors.blue, width: 2.0),
         ),
         enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-              color: Colors.grey, width: 1.0), // Border when not focused
+          borderSide: BorderSide(color: Colors.grey, width: 1.0),
         ),
-        contentPadding: const EdgeInsets.symmetric(
-            horizontal: 16.0, vertical: 12.0), // Adjust padding as needed
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
       ),
     );
   }

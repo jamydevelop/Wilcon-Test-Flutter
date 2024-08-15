@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/module/meter_readings/presentation/meter_readings_sub_page.dart';
 
 class MeterCardBodyWidget extends StatefulWidget {
   const MeterCardBodyWidget({super.key});
@@ -18,7 +19,13 @@ class _MeterCardBodyWidgetState extends State<MeterCardBodyWidget> {
       child: Column(
         children: <Widget>[
           Container(
-            color: const Color(0xFF15422B), // Header background color
+            decoration: const BoxDecoration(
+              color: Color(0xFF15422B), // Header background color
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(4.0), // Border radius for top-left
+                topRight: Radius.circular(4.0), // Border radius for top-right
+              ),
+            ),
             child: ListTile(
               title: const Text(
                 'Meter #24335',
@@ -91,6 +98,11 @@ class _MeterCardBodyWidgetState extends State<MeterCardBodyWidget> {
       child: ElevatedButton.icon(
         onPressed: () {
           // Handle button press
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const MeterReadingsSubPage()),
+          );
         },
         icon:
             const Icon(Icons.arrow_forward, color: Colors.black), // Icon color
