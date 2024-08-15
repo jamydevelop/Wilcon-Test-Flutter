@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/module/scan_qr_code/widgets/qr_button.dart';
+import 'package:wilcon_mobile/module/scan_qr_code/widgets/qr_code_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
-import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
 
 class ScanQRCodePage extends StatefulWidget {
   const ScanQRCodePage({super.key});
@@ -25,10 +26,13 @@ class _ScanQRCodePageState extends State<ScanQRCodePage> {
               children: [
                 CustomizedAppBar(),
                 BackToPrevScreen(),
-                HeaderBar(
-                  text: 'Scan QR Code',
-                  isYellow: false,
-                ),
+                QrCodeWidget(),
+                QrButton(),
+                SizedBox(height: 24)
+                // HeaderBar(
+                //   text: 'Scan QR Code',
+                //   isYellow: false,
+                // ),
               ],
             ),
           ),
