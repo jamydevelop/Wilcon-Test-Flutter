@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
-class QrCodeWidget extends StatefulWidget {
+class QrCodeWidget extends StatelessWidget {
   const QrCodeWidget({super.key});
 
   @override
-  State<QrCodeWidget> createState() => _QrCodeWidgetState();
-}
-
-class _QrCodeWidgetState extends State<QrCodeWidget> {
-  @override
   Widget build(BuildContext context) {
-    return const Expanded(
-      child: Center(
-        child: Text('data'),
+    return Container(
+      color: Colors.black, // Set the background color to black
+      child: const Center(
+        child: Text(
+          'data',
+          style: TextStyle(
+            color: Colors.white, // Set text color to white for better contrast
+            fontSize: 24, // Set font size for better visibility
+          ),
+        ),
       ),
     );
   }

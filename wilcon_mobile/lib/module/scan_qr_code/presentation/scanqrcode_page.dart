@@ -16,32 +16,29 @@ class _ScanQRCodePageState extends State<ScanQRCodePage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      endDrawer: CustomSidebar(),
       body: SafeArea(
-        child: Scaffold(
-          endDrawer: CustomSidebar(),
-          body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                CustomizedAppBar(),
-                BackToPrevScreen(),
-                QrCodeWidget(),
-                QrButton(),
-                SizedBox(height: 24)
-                // HeaderBar(
-                //   text: 'Scan QR Code',
-                //   isYellow: false,
-                // ),
-              ],
-            ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              CustomizedAppBar(),
+              BackToPrevScreen(),
+              Expanded(
+                  child:
+                      QrCodeWidget()), // Ensures QrCodeWidget takes available space
+              QrButton(),
+              SizedBox(height: 24),
+              // Uncomment and modify if needed
+              // HeaderBar(
+              //   text: 'Scan QR Code',
+              //   isYellow: false,
+              // ),
+            ],
           ),
         ),
       ),
     );
   }
-
-  // Widget _scanQRCodePageBody() {
-  //   return const Text('This is Scan QR Code Page! :)');
-  // }
 }
