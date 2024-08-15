@@ -28,29 +28,49 @@ class _SmartBuildingSolutionBtnWidgetState
             foregroundColor: Colors.white,
             backgroundColor: const Color.fromRGBO(22, 110, 22, 1),
             shape: RoundedRectangleBorder(
-              borderRadius:
-                  BorderRadius.circular(8), // Removes the rounded corners
-            ), // Text color
+              borderRadius: BorderRadius.circular(8), // Rounded corners
+            ),
+            padding: EdgeInsets.zero, // Remove padding to use Stack properly
           ),
-          child: const Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          child: const Stack(
             children: [
-              Icon(
-                Icons.collections_bookmark,
-                size: 25,
-                color: Colors.white,
-              ),
-              SizedBox(height: 8),
-              Text(
-                'Smart Building Solution',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+              // Background icon
+              Positioned(
+                bottom: -22, // Move the icon more to the bottom
+                left: -22, // Move the icon more to the left
+                child: Opacity(
+                  opacity: 0.3,
+                  child: Icon(
+                    Icons.collections_bookmark, // Background icon
+                    size: 90, // Increase size for better visibility
+                    color: Colors.white,
+                  ),
                 ),
               ),
-              SizedBox(height: 4),
+              // Centered content
+              Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.collections_bookmark, // Foreground icon
+                      size: 25,
+                      color: Colors.white,
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'Smart Building\n Solution',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 4),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
