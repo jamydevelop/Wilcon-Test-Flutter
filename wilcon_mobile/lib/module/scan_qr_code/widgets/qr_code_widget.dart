@@ -9,7 +9,7 @@ class QrCodeWidget extends StatelessWidget {
       color: Colors.black, // Set the background color to black
       child: const Center(
         child: Text(
-          'data',
+          'QR Code Camera Here',
           style: TextStyle(
             color: Colors.white, // Set text color to white for better contrast
             fontSize: 24, // Set font size for better visibility
