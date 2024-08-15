@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/widgets/card_container.dart';
-import 'package:wilcon_mobile/widgets/card_primary_widget.dart';
+import 'package:wilcon_mobile/widgets/card/card_container.dart';
+import 'package:wilcon_mobile/widgets/card/card_primary_widget.dart';
 
 class CardTemporaryData extends StatelessWidget {
   const CardTemporaryData({super.key});

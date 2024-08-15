@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/work_orders/checklist_detail/checklist_detail_page.dart';
+import 'package:wilcon_mobile/module/work_orders/checklist_detail/presentation/checklist_detail_page.dart';
 
 class ChecklistItems extends StatelessWidget {
   const ChecklistItems({super.key});

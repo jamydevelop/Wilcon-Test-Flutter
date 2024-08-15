@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/module/my_pm_tickets/widgets/my_pm_ticket_body_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/widgets/buttons_widget.dart';
-import 'package:wilcon_mobile/widgets/card_temporary_data.dart';
 import 'package:wilcon_mobile/widgets/search_bar_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
@@ -48,10 +48,7 @@ class _MyPMTicketsState extends State<MyPMTickets> {
                     children: [
                       const CustomizedAppBar(),
                       const BackToPrevScreen(),
-                      const HeaderBar(
-                        text: 'My PM Tickets',
-                        isYellow: false,
-                      ),
+                      const HeaderBar(text: 'My PM Tickets', isYellow: false),
                       const SizedBox(height: 12),
                       const SearchBarWidget(hintText: 'Search'),
                       const SizedBox(height: 12),
@@ -60,16 +57,7 @@ class _MyPMTicketsState extends State<MyPMTickets> {
                     ],
                   ),
                 ),
-                Expanded(
-                  child: Center(
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(
-                          horizontal:
-                              12.0), // Add 12px margin on left and right
-                      child: const CardTemporaryData(), // body: ,
-                    ),
-                  ),
-                ),
+                const MyPmTicketBodyWidget(),
               ],
             ),
           ),

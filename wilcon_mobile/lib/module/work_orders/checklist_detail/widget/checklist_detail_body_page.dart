@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/work_orders/create_new_workorders/create_new_workorders_page.dart';
+import 'package:wilcon_mobile/module/work_orders/create_new_workorders/presentation/create_new_workorders_page.dart';
 
 class ChecklistDetailBodyPage extends StatefulWidget {
   const ChecklistDetailBodyPage({super.key});
