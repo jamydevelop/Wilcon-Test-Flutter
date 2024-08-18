@@ -52,7 +52,7 @@ class QrScannerOverlayWidget extends StatelessWidget {
   }
 }
 
-// Creates the black borders
+// Creates the white borders
 class BorderPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
