@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/module/scan_qr_code/widgets/qr_button.dart';
 import 'package:wilcon_mobile/module/scan_qr_code/widgets/qr_code_body_widget.dart';
 import 'package:wilcon_mobile/widgets/appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
@@ -28,8 +27,8 @@ class _ScanQRCodePageState extends State<ScanQRCodePage> {
               Expanded(
                   child:
                       QrCodeBodyWidget()), // Ensures QrCodeWidget takes available space
-              QrButton(),
-              SizedBox(height: 24),
+              // QrButton(),
+              //SizedBox(height: 24),
               // Uncomment and modify if needed
               // HeaderBar(
               //   text: 'Scan QR Code',

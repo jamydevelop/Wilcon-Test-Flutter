@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class QRScannerOverlay extends StatelessWidget {
-  const QRScannerOverlay({super.key, required this.overlayColour});
+class QrScannerOverlayWidget extends StatelessWidget {
+  const QrScannerOverlayWidget({super.key, required this.overlayColour});
 
   final Color overlayColour;
 

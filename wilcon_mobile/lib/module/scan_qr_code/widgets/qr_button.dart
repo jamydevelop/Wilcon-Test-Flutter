@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 
-class QrButton extends StatefulWidget {
-  const QrButton({super.key});
+class QrButton extends StatelessWidget {
+  final VoidCallback onPressed;
 
-  @override
-  State<QrButton> createState() => _QrButtonState();
-}
+  const QrButton({super.key, required this.onPressed});
 
-class _QrButtonState extends State<QrButton> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double
           .infinity, // Make the button take the full width of its container
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.white,
           backgroundColor:
