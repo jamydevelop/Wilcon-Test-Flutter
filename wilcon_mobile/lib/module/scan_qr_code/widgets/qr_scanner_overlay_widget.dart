@@ -101,7 +101,7 @@ class BorderPainter extends CustomPainter {
     canvas.drawRRect(
       rrect,
       Paint()
-        ..color = Colors.black
+        ..color = Colors.white
         ..style = PaintingStyle.stroke
         ..strokeWidth = width,
     );
