@@ -52,13 +52,13 @@ class QRScannerOverlay extends StatelessWidget {
   }
 }
 
-// Creates the white borders
+// Creates the black borders
 class BorderPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     const width = 4.0;
     const radius = 20.0;
-    const tRadius = 3 * radius;
+    const tRadius = 2.5 * radius;
     final rect = Rect.fromLTWH(
       width,
       width,
@@ -101,7 +101,7 @@ class BorderPainter extends CustomPainter {
     canvas.drawRRect(
       rrect,
       Paint()
-        ..color = Colors.white
+        ..color = Colors.black
         ..style = PaintingStyle.stroke
         ..strokeWidth = width,
     );

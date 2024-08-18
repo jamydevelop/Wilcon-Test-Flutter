@@ -27,32 +27,6 @@ class QrCodeBodyWidget extends StatelessWidget {
           QRScannerOverlay(
             overlayColour: Colors.black.withOpacity(0.5),
           ),
-          // Centered frame with a thickness of 4px
-          // Center(
-          //   child: Container(
-          //     width: 400,
-          //     height: 400,
-          //     decoration: BoxDecoration(
-          //       border: Border.all(
-          //         color: Colors.green,
-          //         width: 4, // Set the thickness to 4px
-          //       ),
-          //       // Remove borderRadius to make the edges sharp
-          //       borderRadius: BorderRadius.zero,
-          //     ),
-          //     // Optional: Add a child widget if needed, for example, text
-          //     // child: Center(
-          //     //   child: Text(
-          //     //     'Scan Here',
-          //     //     style: TextStyle(
-          //     //       color: Colors.green,
-          //     //       fontSize: 16,
-          //     //       fontWeight: FontWeight.bold,
-          //     //     ),
-          //     //   ),
-          //     // ),
-          //   ),
-          // ),
         ],
       ),
     );
