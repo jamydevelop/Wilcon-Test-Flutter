@@ -12,7 +12,7 @@ class BuildUiWidget extends StatefulWidget {
 class _BuildUiWidgetState extends State<BuildUiWidget> {
   @override
   Widget build(BuildContext context) {
-    return const Stack(
+    return const Column(
       children: [
         ImgBackgroundWidget(),
         LoginFormWidget(),
