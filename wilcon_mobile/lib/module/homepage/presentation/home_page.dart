@@ -3,7 +3,7 @@ import 'package:wilcon_mobile/module/homepage/widgets/header_user_widget.dart';
 import 'package:wilcon_mobile/module/homepage/widgets/homepage_body_widget.dart';
 import 'package:wilcon_mobile/widgets/buttons_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
-import 'package:wilcon_mobile/widgets/appbar_widget.dart';
+import 'package:wilcon_mobile/widgets/customized_appbar/appbar_widget.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});

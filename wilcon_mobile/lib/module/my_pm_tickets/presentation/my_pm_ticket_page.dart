@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/module/my_pm_tickets/widgets/my_pm_ticket_body_widget.dart';
-import 'package:wilcon_mobile/widgets/appbar_widget.dart';
-import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/widgets/buttons_widget.dart';
+import 'package:wilcon_mobile/widgets/customized_appbar/cuztomized_appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/search_bar_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
@@ -46,8 +45,8 @@ class _MyPMTicketsState extends State<MyPMTickets> {
                       12.0), // Padding inside the container
                   child: Column(
                     children: [
-                      const CustomizedAppBar(),
-                      const BackToPrevScreen(),
+                      const CuztomizedAppbarWidget(),
+                      const SizedBox(height: 12),
                       const HeaderBar(text: 'My PM Tickets', isYellow: false),
                       const SizedBox(height: 12),
                       const SearchBarWidget(hintText: 'Search'),

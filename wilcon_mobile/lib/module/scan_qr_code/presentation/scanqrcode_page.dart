@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/module/scan_qr_code/widgets/qr_code_body_widget.dart';
-import 'package:wilcon_mobile/widgets/appbar_widget.dart';
-import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
+import 'package:wilcon_mobile/widgets/customized_appbar/cuztomized_appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 
 class ScanQRCodePage extends StatefulWidget {
@@ -14,26 +13,24 @@ class ScanQRCodePage extends StatefulWidget {
 class _ScanQRCodePageState extends State<ScanQRCodePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      endDrawer: CustomSidebar(),
+    return Scaffold(
+      endDrawer: const CustomSidebar(),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.0),
+          padding: const EdgeInsets.symmetric(horizontal: 0.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              CustomizedAppBar(),
-              BackToPrevScreen(),
-              Expanded(
-                  child:
-                      QrCodeBodyWidget()), // Ensures QrCodeWidget takes available space
-              // QrButton(),
-              //SizedBox(height: 24),
-              // Uncomment and modify if needed
-              // HeaderBar(
-              //   text: 'Scan QR Code',
-              //   isYellow: false,
-              // ),
+              Container(
+                padding: const EdgeInsets.only(
+                    top: 12.0,
+                    left: 12.0,
+                    right: 12.0), // Removed bottom padding
+                child: const CuztomizedAppbarWidget(),
+              ),
+              const Expanded(
+                child: QrCodeBodyWidget(),
+              ),
             ],
           ),
         ),
