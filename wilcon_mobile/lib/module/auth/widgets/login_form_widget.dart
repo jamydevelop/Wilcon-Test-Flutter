@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/module/auth/widgets/img_inventi_widget.dart';
-import 'package:wilcon_mobile/module/auth/widgets/img_tagline_widget.dart';
 import 'package:wilcon_mobile/module/auth/widgets/login_button_widget.dart';
 import 'package:wilcon_mobile/module/auth/widgets/signed_in_text_widget.dart';
 
@@ -20,19 +19,17 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
         child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            //color: Colors.grey,
             borderRadius:
                 BorderRadius.circular(10), // Optional: Adds rounded corners
           ),
           child: const Padding(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.only(left: 12, right: 12, bottom: 16),
             child: Form(
               child: Column(
                 mainAxisSize: MainAxisSize
                     .min, // Adjusted to min to avoid excessive height
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  ImgTaglineWidget(),
                   SizedBox(height: 24),
                   SignedInTextWidget(),
                   SizedBox(height: 24),

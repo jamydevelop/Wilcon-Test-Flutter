@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/widgets/appbar_widget.dart';
-import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
+import 'package:wilcon_mobile/widgets/customized_appbar/cuztomized_appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
 
 class MeterReadingsSubHeaderWidget extends StatefulWidget {
@@ -31,8 +30,8 @@ class _MeterReadingsSubHeaderWidgetState
       padding: const EdgeInsets.all(12.0), // Padding inside the container
       child: const Column(
         children: [
-          CustomizedAppBar(), // Removed const
-          BackToPrevScreen(), // Removed const
+          CuztomizedAppbarWidget(), // Removed const
+          SizedBox(height: 12),
           HeaderBar(
             text: 'Meter Readings',
             isYellow: false,

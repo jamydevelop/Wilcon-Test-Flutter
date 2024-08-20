@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/widgets/appbar_widget.dart';
-import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
+import 'package:wilcon_mobile/widgets/customized_appbar/cuztomized_appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
 
@@ -24,8 +23,8 @@ class _SmartBuildingSolutionPageState extends State<SmartBuildingSolutionPage> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                CustomizedAppBar(),
-                BackToPrevScreen(),
+                CuztomizedAppbarWidget(),
+                SizedBox(height: 12),
                 HeaderBar(
                   text: 'Smart Building Solutions',
                   isYellow: false,

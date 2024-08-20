@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/module/notifications/widgets/notification_body_widget.dart';
-import 'package:wilcon_mobile/widgets/appbar_widget.dart';
-import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
+import 'package:wilcon_mobile/widgets/customized_appbar/appbar_widget.dart';
+import 'package:wilcon_mobile/widgets/customized_appbar/back_screen_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
 

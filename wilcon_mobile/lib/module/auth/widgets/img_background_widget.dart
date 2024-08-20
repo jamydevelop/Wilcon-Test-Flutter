@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wilcon_mobile/module/auth/widgets/img_tagline_widget.dart';
 
 class ImgBackgroundWidget extends StatefulWidget {
   const ImgBackgroundWidget({super.key});
@@ -35,6 +36,15 @@ class _ImgBackgroundWidgetState extends State<ImgBackgroundWidget> {
               ],
               stops: [0.0, 1.0], // Adjust stops to control the gradient spread
             ),
+          ),
+        ),
+        const Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: ImgTaglineWidget(),
           ),
         ),
       ],

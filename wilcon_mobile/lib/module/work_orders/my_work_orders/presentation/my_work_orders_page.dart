@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/module/work_orders/my_work_orders/widgets/my_work_orders_body_widget.dart';
-import 'package:wilcon_mobile/widgets/appbar_widget.dart';
-import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/widgets/buttons_widget.dart';
+import 'package:wilcon_mobile/widgets/customized_appbar/cuztomized_appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/search_bar_widget.dart';
 import 'package:wilcon_mobile/widgets/sidebar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
@@ -46,8 +45,8 @@ class _MyWorkOrdersState extends State<MyWorkOrders> {
                       12.0), // Padding inside the container
                   child: Column(
                     children: [
-                      const CustomizedAppBar(),
-                      const BackToPrevScreen(),
+                      const CuztomizedAppbarWidget(),
+                      const SizedBox(height: 12),
                       const HeaderBar(
                         text: 'My Work Orders',
                         isYellow: false,

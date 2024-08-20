@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wilcon_mobile/widgets/appbar_widget.dart';
-import 'package:wilcon_mobile/widgets/back_screen_widget.dart';
 import 'package:wilcon_mobile/widgets/buttons_widget.dart';
+import 'package:wilcon_mobile/widgets/customized_appbar/cuztomized_appbar_widget.dart';
 import 'package:wilcon_mobile/widgets/header_bar_widget.dart';
 
 class MeterReadingsMainHeaderWidget extends StatefulWidget {
@@ -33,8 +32,8 @@ class _MeterReadingsMainHeaderWidgetState
       padding: const EdgeInsets.all(12.0),
       child: Column(
         children: [
-          const CustomizedAppBar(),
-          const BackToPrevScreen(),
+          const CuztomizedAppbarWidget(),
+          const SizedBox(height: 12),
           const HeaderBar(
             text: 'Meter Readings',
             isYellow: false,
