@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FilterModalWidget extends StatelessWidget {
-  const FilterModalWidget({super.key});
+class FilterBottomSheet extends StatelessWidget {
+  const FilterBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -160,7 +160,7 @@ void showFilterBottomSheet(BuildContext context) {
     backgroundColor:
         Colors.transparent, // Make the bottom sheet background transparent
     builder: (BuildContext context) {
-      return const FilterModalWidget();
+      return const FilterBottomSheet();
     },
   );
 }
