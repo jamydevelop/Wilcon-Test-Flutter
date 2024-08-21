@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wilcon_mobile/module/work_orders/create_new_workorders/presentation/create_new_workorders_page.dart';
-
-import 'package:wilcon_mobile/widgets/filter_bottom_sheet_widget.dart';
+import 'package:wilcon_mobile/widgets/filter_modal_widget.dart';
 
 class ButtonClass {
   Widget createNewButton(BuildContext context) {
@@ -61,7 +60,7 @@ class ButtonClass {
                       mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        FilterBottomSheet(),
+                        FilterModalWidget(),
                       ],
                     ),
                   ),
