@@ -21,7 +21,7 @@ class _NotificationBodyWidgetState extends State<NotificationBodyWidget> {
           decoration: const BoxDecoration(
             border: Border(
               bottom: BorderSide(
-                color: Colors.white, // Bottom border color
+                color: Colors.grey, // Bottom border color
                 width: 1.0, // Border width
               ),
             ),

@@ -12,7 +12,7 @@ class _NotificationCardWidgetState extends State<NotificationCardWidget> {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.zero, // Remove any external margin
-      elevation: 0.0, // Remove card shadow
+      elevation: 4.0, // Remove card shadow
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.zero, // Sharp edges
       ),

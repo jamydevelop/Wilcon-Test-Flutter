@@ -13,21 +13,33 @@ class NotificationsPage extends StatefulWidget {
 class _NotificationsPageState extends State<NotificationsPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       endDrawer:
-          CustomSidebar(), // Make sure this is not const if it is not a const constructor
+          const CustomSidebar(), // Make sure this is not const if it is not a const constructor
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 0.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              NotificationAppbarContainerWidget(),
-              Expanded(
-                  child:
-                      NotificationBodyWidget()), // Use Expanded to fill remaining space
-            ],
-          ),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            const Material(
+              elevation: 4.0, // Adjust elevation for the floating effect
+              shadowColor: Colors.black45, // Optional: To control shadow color
+              child: NotificationAppbarContainerWidget(),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            Expanded(
+              child: Card(
+                margin: const EdgeInsets.all(0),
+                color: Colors.white,
+                elevation: 1.0, // Adjust the elevation value as needed
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0.0),
+                ),
+                child: const NotificationBodyWidget(),
+              ),
+            ),
+          ],
         ),
       ),
     );
